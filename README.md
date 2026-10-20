@@ -1,4 +1,6 @@
-# Context-Aware Personal AI Assistant
+# routewise: a local-first assistant that routes every query to the best measured model
+
+**89.5% accuracy, level with always using Claude Sonnet, at 95% lower API cost. Your memory and documents never leave your machine.**
 
 An open-source, local-first assistant that sends each query to the model **measured** to be best for it,
 remembers you across sessions, and answers from your own documents. Your memory and documents stay on
