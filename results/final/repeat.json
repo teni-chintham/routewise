@@ -1,0 +1,80 @@
+{
+  "claude-haiku-5.5": {
+    "n": 200,
+    "run1": {
+      "correct": 177,
+      "accuracy": 0.885,
+      "ci95": [
+        0.8334,
+        0.9221
+      ]
+    },
+    "run2": {
+      "correct": 173,
+      "accuracy": 0.865,
+      "ci95": [
+        0.8107,
+        0.9055
+      ]
+    },
+    "same_mark": 0.96,
+    "same_text": 0.375,
+    "mcnemar": {
+      "run1_only": 6,
+      "run2_only": 2,
+      "p_value": 0.2891
+    }
+  },
+  "claude-sonnet-5.5": {
+    "n": 200,
+    "run1": {
+      "correct": 178,
+      "accuracy": 0.89,
+      "ci95": [
+        0.8391,
+        0.9262
+      ]
+    },
+    "run2": {
+      "correct": 178,
+      "accuracy": 0.89,
+      "ci95": [
+        0.8391,
+        0.9262
+      ]
+    },
+    "same_mark": 0.99,
+    "same_text": 0.42,
+    "mcnemar": {
+      "run1_only": 1,
+      "run2_only": 1,
+      "p_value": 1.0
+    }
+  },
+  "gemini-3.1-flash-lite": {
+    "n": 198,
+    "run1": {
+      "correct": 170,
+      "accuracy": 0.8586,
+      "ci95": [
+        0.8032,
+        0.9003
+      ]
+    },
+    "run2": {
+      "correct": 170,
+      "accuracy": 0.8586,
+      "ci95": [
+        0.8032,
+        0.9003
+      ]
+    },
+    "same_mark": 1.0,
+    "same_text": 1.0,
+    "mcnemar": {
+      "run1_only": 0,
+      "run2_only": 0,
+      "p_value": 1.0
+    }
+  }
+}

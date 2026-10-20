@@ -8,3 +8,7 @@ models/*.pkl
 results/upload_*
 .runlogs/
 *.tgz
+data/eval/_downloads/
+claude-done*
+.DS_Store
+*.bundle

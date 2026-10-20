@@ -1,0 +1,91 @@
+@startuml activity
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam classAttributeIconSize 0
+skinparam ArrowColor #333333
+skinparam classBorderColor #1F4E79
+skinparam classBackgroundColor #FFFFFF
+skinparam classHeaderBackgroundColor #EEF4FC
+skinparam stereotypeCBackgroundColor #EEF4FC
+skinparam packageBorderColor #8A8984
+skinparam sequenceParticipantBorderColor #1F4E79
+skinparam sequenceParticipantBackgroundColor #EEF4FC
+skinparam sequenceLifeLineBorderColor #8A8984
+skinparam sequenceGroupBorderColor #1F4E79
+skinparam sequenceGroupHeaderFontColor #1F4E79
+skinparam activityBorderColor #1F4E79
+skinparam activityBackgroundColor #EEF4FC
+skinparam activityDiamondBorderColor #1F4E79
+skinparam activityDiamondBackgroundColor #FFFFFF
+skinparam swimlaneBorderColor #8A8984
+skinparam noteBackgroundColor #FFFBEA
+skinparam noteBorderColor #B8A86A
+
+|User|
+start
+:Type a question\n(optionally attach an image);
+|Assistant (this computer)|
+if (Memory on?) then (yes)
+  :Recall facts and summaries\nsimilar to the question;
+else (no)
+endif
+if (RAG on?) then (yes)
+  :Retrieve top-k passages\nfrom the user's documents;
+else (no)
+endif
+if (Memory on?) then (yes)
+  :Load recent turns of this session;
+else (no)
+endif
+:private context = any memory hit,\npassage or earlier turn;
+if (Routing on?) then (yes)
+  :Classify intent;
+  if (Image attached?) then (yes)
+    :Intent = multimodal;
+  else (no)
+  endif
+  :Score every eligible model with RUS\n(private context: local models only);
+  :Pick the highest RUS;
+else (no)
+  :Use the fixed model;
+endif
+if (Routing on, local first on,\ncoding or maths, no image?) then (yes)
+  if (Intent?) then (coding)
+    if (Prompt has an assert?) then (yes)
+      :Local coder (Ollama) writes the code;
+      :Run the code against\nthe prompt's assert;
+    else (no)
+    endif
+  else (maths)
+    :Two local models (Ollama) answer;
+    :Compare their final numbers;
+  endif
+else (no)
+endif
+if (Local answer passed its check?) then (yes)
+  :Keep the local answer;
+else (no)
+  |Model backend|
+  :Chosen (or fixed) model answers;
+  note right
+    a cloud model only when
+    the query has no private
+    context; logged in the
+    egress log
+  end note
+  |Assistant (this computer)|
+endif
+if (Passages used but no [n] marker?) then (yes)
+  :Append the sources used;
+else (no)
+endif
+if (Memory on?) then (yes)
+  :Store the turn;\nextract facts from the user's message;
+else (no)
+endif
+:Append to cost ledger;
+|User|
+:Read the answer and the\nrouting decision (Inspector);
+stop
+@enduml

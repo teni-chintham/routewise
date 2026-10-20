@@ -1,0 +1,135 @@
+@startuml class_diagram
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam classAttributeIconSize 0
+skinparam ArrowColor #333333
+skinparam classBorderColor #1F4E79
+skinparam classBackgroundColor #FFFFFF
+skinparam classHeaderBackgroundColor #EEF4FC
+skinparam stereotypeCBackgroundColor #EEF4FC
+skinparam packageBorderColor #8A8984
+skinparam sequenceParticipantBorderColor #1F4E79
+skinparam sequenceParticipantBackgroundColor #EEF4FC
+skinparam sequenceLifeLineBorderColor #8A8984
+skinparam sequenceGroupBorderColor #1F4E79
+skinparam sequenceGroupHeaderFontColor #1F4E79
+skinparam activityBorderColor #1F4E79
+skinparam activityBackgroundColor #EEF4FC
+skinparam activityDiamondBorderColor #1F4E79
+skinparam activityDiamondBackgroundColor #FFFFFF
+skinparam swimlaneBorderColor #8A8984
+skinparam noteBackgroundColor #FFFBEA
+skinparam noteBorderColor #B8A86A
+
+set separator none
+hide circle
+hide empty members
+skinparam packageStyle rectangle
+skinparam nodesep 30
+skinparam ranksep 45
+skinparam linetype polyline
+left to right direction
+package "pipeline.py" {
+  class Response {
+    +answer: str
+    +model: str
+    +intent: IntentResult | None
+    +decision: RouteDecision | None
+    +memory_hits: list[MemoryHit]
+    +passages: list[Passage]
+    +latency_s: float
+    +cost_usd: float
+    +tokens_in: int
+    +tokens_out: int
+    +private_context: bool
+    +left_device: bool
+    +cascade_note: str
+    +sources_added: bool
+    +system_prompt: str
+  }
+  class Assistant {
+    +weights: dict[str, float]
+    +specs: dict[str, ModelSpec]
+    +cards: dict[str, dict]
+    +policy: str
+    +pool: list[str] | None
+    +fixed_model: str
+    +clf: IntentClassifier | None
+    +memory: Memory | None
+    +retriever: Retriever | None
+    +ledger: bool
+    +cascade: bool
+    +session_id: str
+    +routing: bool
+    +use_memory: bool
+    +use_rag: bool
+    {static} +variant(name: str): 'Assistant'
+    +new_session()
+    +chat(query: str, image: str | None): Response
+  }
+}
+package "intent.py" {
+  class IntentResult {
+    +intent: str
+    +confidence: float
+    +probs: dict[str, float]
+  }
+  class IntentClassifier {
+    +pipe: sklearn Pipeline
+    +classes: list[str]
+    +predict(text: str): IntentResult
+  }
+}
+package "memory.py" {
+  class MemoryHit {
+    +kind: str
+    +text: str
+    +score: float
+  }
+  class Memory {
+    +db: sqlite3.Connection
+    +user_id: str
+    +embedder: str | None
+    +add_turn(session_id: str, role: str, content: str)
+    +add_fact(text: str, session_id: str)
+    +summarize_session(session_id: str)
+    +recent_turns(session_id: str, n: int): list[dict]
+    +recall(query: str, top_k: int, min_sim: float): list[MemoryHit]
+    +all_facts(): list[str]
+    +clear()
+  }
+}
+package "rag.py" {
+  class Passage {
+    +doc: str
+    +chunk_id: int
+    +text: str
+    +score: float
+  }
+  class Retriever {
+    +index: dict
+    +retrieve(query: str, top_k: int, min_sim: float): list[Passage]
+  }
+}
+class RouteDecision
+class ModelSpec
+class "router" as M_router <<module>>
+class "cascade" as M_cascade <<module>>
+class "providers" as M_providers <<module>>
+Assistant *-- "0..1" IntentClassifier : clf
+Assistant *-- "0..1" Memory : memory
+Assistant *-- "0..1" Retriever : retriever
+Assistant --> "1..*" ModelSpec : specs
+Assistant ..> Response : <<create>>
+Response --> "0..1" IntentResult : intent
+Response --> "0..1" RouteDecision : decision
+Response --> "0..*" MemoryHit : memory_hits
+Response --> "0..*" Passage : passages
+Memory ..> MemoryHit : <<create>>
+Retriever ..> Passage : <<create>>
+IntentClassifier ..> IntentResult : <<create>>
+Assistant ..> M_router : route()
+Assistant ..> M_cascade : check_code(),\ncheck_agreement()
+Assistant ..> M_providers : generate()
+@enduml

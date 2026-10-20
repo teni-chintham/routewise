@@ -1,0 +1,87 @@
+{
+  "model": "qwen2.5-coder-3b",
+  "spec": {
+    "name": "qwen2.5-coder-3b",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:3b",
+    "local": true,
+    "vision": false,
+    "price_in": 0,
+    "price_out": 0,
+    "enabled": true,
+    "free_tier": false
+  },
+  "benchmark": "public_bench calibration split",
+  "created": "2026-10-20T10:12:12+0000",
+  "machine": "Linux x86_64 vm",
+  "intents": {
+    "coding": {
+      "eligible": true,
+      "n": 40,
+      "correct": 22,
+      "accuracy": 0.55,
+      "ci95": [
+        0.3983,
+        0.6929
+      ],
+      "median_latency_s": 5.021,
+      "p90_latency_s": 18.403,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 118.3,
+      "mean_tokens_out": 112.7,
+      "errors": 0
+    },
+    "writing": {
+      "eligible": true,
+      "n": 40,
+      "correct": 18,
+      "accuracy": 0.45,
+      "ci95": [
+        0.3071,
+        0.6017
+      ],
+      "median_latency_s": 2.428,
+      "p90_latency_s": 21.878,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 101.5,
+      "mean_tokens_out": 170.2,
+      "errors": 0
+    },
+    "search": {
+      "eligible": true,
+      "n": 40,
+      "correct": 4,
+      "accuracy": 0.1,
+      "ci95": [
+        0.0396,
+        0.2305
+      ],
+      "median_latency_s": 0.814,
+      "p90_latency_s": 1.195,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 67.2,
+      "mean_tokens_out": 17.4,
+      "errors": 0
+    },
+    "reasoning": {
+      "eligible": true,
+      "n": 40,
+      "correct": 31,
+      "accuracy": 0.775,
+      "ci95": [
+        0.625,
+        0.8768
+      ],
+      "median_latency_s": 10.407,
+      "p90_latency_s": 16.113,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 132.3,
+      "mean_tokens_out": 234.9,
+      "errors": 0
+    },
+    "multimodal": {
+      "eligible": false,
+      "n": 0
+    }
+  }
+}

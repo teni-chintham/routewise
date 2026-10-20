@@ -1,0 +1,3198 @@
+{
+  "provider": "registry",
+  "embedder": "ollama",
+  "fixed_model": "llama3.2-3b",
+  "pool": [
+    "qwen2.5-coder-3b",
+    "llama3.2-3b",
+    "llama3.2-1b",
+    "moondream-1.8b"
+  ],
+  "routing": {
+    "intent_accuracy": 0.9,
+    "intent_ci95": [
+      0.8584,
+      0.9304
+    ],
+    "macro_f1": 0.899,
+    "n_test": 270,
+    "n_total": 1515,
+    "per_class": {
+      "coding": 0.839,
+      "multimodal": 1.0,
+      "reasoning": 0.842,
+      "search": 0.865,
+      "writing": 0.947
+    }
+  },
+  "variants": {
+    "baseline": {
+      "flags": {
+        "routing": false,
+        "memory": false,
+        "rag": false
+      },
+      "memory": {
+        "recall_accuracy": 0.0,
+        "recall_ci95": [
+          0.0,
+          0.1135
+        ],
+        "correct": 0,
+        "n": 30,
+        "facts_stored": 0,
+        "egress": {
+          "calls": 54,
+          "cloud_calls": 0,
+          "cloud_calls_with_private_context": 0
+        },
+        "seconds": 85.9,
+        "rows": [
+          {
+            "q": "What is my name?",
+            "answer": "I don't know. This is the beginning of our conversation, and I don't have any information about you.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I live?",
+            "answer": "I don't know where you live. Can you tell me more about your location, such as your city or country?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What company do I work for?",
+            "answer": "I don't know. You haven't told me that information.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my job title?",
+            "answer": "I don't know your job title. Can you please provide more context or information about yourself?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which programming language do I like the most?",
+            "answer": "I don't know. We haven't discussed your preferences or interests yet. Would you like to share which programming language you like the most?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which editor do I use?",
+            "answer": "I don't know which editor you should use without more context. Can you please provide more information about the type of editing you need to do (e.g. text, image, video), the software you're working w",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my dog's name?",
+            "answer": "I don't know. We haven't discussed your dog's name in our conversation so far.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How old is my dog?",
+            "answer": "I don't know how old your dog is. Can you provide more information, such as the breed or any relevant dates?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What race am I training for?",
+            "answer": "I don't know what race you are training for. Can you please provide more context or information about the race you are preparing for?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I usually run?",
+            "answer": "I don't know where you usually run. Can you tell me more about your running habits or the location you're referring to?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When and where is my sister's wedding?",
+            "answer": "I don't know when and where your sister's wedding is. Can you provide more information or context about the wedding?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my sister's name?",
+            "answer": "I don't know. We haven't discussed your sister's name in our conversation.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I eat meat?",
+            "answer": "I don't know your personal dietary preferences or restrictions.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What am I allergic to?",
+            "answer": "I don't know. Can you provide more context or information about your allergies, such as symptoms or potential triggers?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What car do I drive?",
+            "answer": "I don't know what car you drive.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where am I doing my masters?",
+            "answer": "I don't know where you're doing your master's. Can you please provide more context or information about your studies?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is my manager?",
+            "answer": "I don't know. Can you please provide more context or information about your work or organization?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my team called?",
+            "answer": "I don't know what your team is called. Can you please provide more context or information about your team?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What role do I want to move into next year?",
+            "answer": "I don't know what role you're currently in or what your career goals are. Can you tell me more about your current situation and what you're looking to achieve next year?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I prefer coffee or tea?",
+            "answer": "I don't know. We haven't discussed your preferences or habits yet. Would you like to share?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my birthday?",
+            "answer": "I don't know when your birthday is. Can you tell me?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What year was I born?",
+            "answer": "I don't know. You haven't told me your birth year.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How much RAM does my laptop have?",
+            "answer": "I don't know the specific details about your laptop. Can you please check your laptop's specifications or settings to find out the amount of RAM it has?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite movie?",
+            "answer": "I don't know. We haven't discussed your favourite movie before.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite band?",
+            "answer": "I don't know. We haven't discussed your favourite band yet. Would you like to share it with me?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my one-on-one with my manager?",
+            "answer": "I don't know when your one-on-one with your manager is scheduled. Can you please check your calendar or ask your manager directly for the details?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When does my gym membership expire?",
+            "answer": "I don't know when your gym membership expires. Can you please provide me with the details of your membership, such as the gym name and the date you signed up?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which language am I learning?",
+            "answer": "I don't know. We haven't discussed any language learning yet.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which app am I using to learn a language?",
+            "answer": "I don't know. Can you tell me which app you're using to learn a language?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What are the last four digits of my car number?",
+            "answer": "I don't know. I'm a text-based AI assistant and do not have access to your personal information, including your car's registration details.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          }
+        ]
+      },
+      "rag": {
+        "accuracy": 0.0,
+        "accuracy_ci95": [
+          0.0,
+          0.0964
+        ],
+        "abstention_rate": 1.0,
+        "abstention_ci95": [
+          0.9036,
+          1.0
+        ],
+        "hallucination_rate": 0.0,
+        "hallucination_ci95": [
+          0.0,
+          0.0964
+        ],
+        "citation_rate": 0.0,
+        "citation_ci95": [
+          0.0,
+          0.0964
+        ],
+        "model_citation_rate": 0.0,
+        "counts": {
+          "correct": 0,
+          "abstained": 36,
+          "hallucinated": 0,
+          "cited": 0,
+          "cited_by_model": 0
+        },
+        "n": 36,
+        "seconds": 76.7,
+        "rows": [
+          {
+            "q": "Who founded Helix Robotics and in which city?",
+            "answer": "I don't know who founded Helix Robotics or in which city.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where is Helix Robotics headquartered now?",
+            "answer": "I don't know the current location of Helix Robotics' headquarters.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many people does Helix employ?",
+            "answer": "I don't know the current number of employees at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit 2?",
+            "answer": "I don't know the rated payload of the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit Lite?",
+            "answer": "I don't know the rated payload of the Orbit Lite.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What compute module does the Compass stack run on?",
+            "answer": "I don't know the specific compute module the Compass stack runs on.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is Helix's largest customer?",
+            "answer": "I don't know who Helix's largest customer is.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was Helix's revenue in FY2024-25?",
+            "answer": "I don't know the specific revenue of Helix for FY2024-25.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who chairs the Helix board?",
+            "answer": "I don't know who chairs the Helix board.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the maximum loaded speed of the Orbit 2?",
+            "answer": "I don't know the maximum loaded speed of the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long does the Orbit 2 take to charge from 20 to 90 percent?",
+            "answer": "I don't know the specific charging time for the Orbit 2 from 20 to 90 percent. Can you provide more context or information about the Orbit 2, such as its model or manufacturer?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "At what battery percentage does an Orbit 2 return to its dock?",
+            "answer": "I don't know the specific battery percentage at which an Orbit 2 returns to its dock.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which lidar does the Orbit 2 use?",
+            "answer": "I don't know which lidar the Orbit 2 uses.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the Orbit 2 positioning accuracy against fiducial markers?",
+            "answer": "I don't know the specific positioning accuracy of the Orbit 2 against fiducial markers. Can you provide more context or information about the Orbit 2?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long is the Orbit 2 warranty?",
+            "answer": "I don't know the specific warranty details for the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the current stable version of Compass?",
+            "answer": "I don't know the current stable version of Compass.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the fleet coordination layer of Compass called?",
+            "answer": "I don't know the specific name of the fleet coordination layer of Compass.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots can Conductor coordinate per warehouse?",
+            "answer": "I don't know the specific details about Conductor's capabilities or warehouse coordination. Can you provide more context or information about Conductor?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How quickly do emergency stop commands reach every robot?",
+            "answer": "I don't know the specific details of emergency stop commands reaching every robot. The speed and reliability of emergency stop commands can vary depending on the robot's design, network architecture, ",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "On which port does the Compass REST API listen?",
+            "answer": "I don't know the specific port on which the Compass REST API listens. Can you provide more context or information about the Compass REST API you are referring to?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who leads the Compass team?",
+            "answer": "I don't know who leads the Compass team.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many days of paid leave do Helix employees get per year?",
+            "answer": "I don't know the specific number of paid leave days for Helix employees per year.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the annual learning budget per employee at Helix?",
+            "answer": "I don't know the specific annual learning budget per employee at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the notice period at Helix?",
+            "answer": "I don't know the specific notice period for Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the referral bonus for an engineering hire?",
+            "answer": "I don't know the specific referral bonus for an engineering hire. Referral bonuses can vary widely depending on the company, location, and other factors. If you're looking for information on a specifi",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the acknowledgement target for a Severity 1 incident?",
+            "answer": "I don't know the specific acknowledgement target for a Severity 1 incident. It may vary depending on the organization, industry, or specific incident response plan.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was the most common field fault in 2025?",
+            "answer": "I don't know. I'm a large language model, I don't have have access to real-time data or information beyond my knowledge cutoff in December 2023. I'm not aware of any data on field faults in 2025.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How often is preventive maintenance scheduled on Orbit robots?",
+            "answer": "I don't know the specific schedule for preventive maintenance on Orbit robots.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is the head of field operations at Helix?",
+            "answer": "I don't know who the head of field operations at Helix is.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the payload target of the Orbit 3?",
+            "answer": "I don't know the payload target of the Orbit 3.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is Compass 4.0 planned for release?",
+            "answer": "I don't know the planned release date for Compass 4.0.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which interface will Compass 4.0 use to support third-party robots?",
+            "answer": "I don't know the specific details about Compass 4.0's interface for supporting third-party robots.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where did Helix open a sales office in 2026?",
+            "answer": "I don't know.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the codename of the piece-picking arm research project?",
+            "answer": "I don't know the codename of the piece-picking arm research project.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots does Helix aim to have deployed by December 2026?",
+            "answer": "I don't know the specific deployment plans of Helix regarding robots by December 2026.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who owns the Helix product roadmap?",
+            "answer": "I don't know who owns the Helix product roadmap.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          }
+        ]
+      }
+    },
+    "A": {
+      "flags": {
+        "routing": true,
+        "memory": false,
+        "rag": false
+      },
+      "memory": {
+        "recall_accuracy": 0.0,
+        "recall_ci95": [
+          0.0,
+          0.1135
+        ],
+        "correct": 0,
+        "n": 30,
+        "facts_stored": 0,
+        "egress": {
+          "calls": 54,
+          "cloud_calls": 0,
+          "cloud_calls_with_private_context": 0
+        },
+        "seconds": 326.5,
+        "rows": [
+          {
+            "q": "What is my name?",
+            "answer": "I don't know. This is the beginning of our conversation, and I don't have any information about you.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I live?",
+            "answer": "I don't know where you live. Can you tell me more about your location, such as your city or country?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What company do I work for?",
+            "answer": "I don't know. You haven't told me that information.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my job title?",
+            "answer": "I don't know your job title. Can you please provide more context or information about yourself?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which programming language do I like the most?",
+            "answer": "I don't know. We haven't discussed your preferences or interests yet. Would you like to share which programming language you like the most?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which editor do I use?",
+            "answer": "You can use any text editor you prefer, such as Visual Studio Code, Sublime Text, or Notepad++.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "What is my dog's name?",
+            "answer": "I don't know. We haven't discussed your dog's name in our conversation so far.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How old is my dog?",
+            "answer": "I'm sorry, but I don't have enough information to determine your dog's age. Please provide me with the dog's birth date or any other relevant details.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "What race am I training for?",
+            "answer": "I don't know what race you are training for. Can you please provide more context or information about the race you are preparing for?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I usually run?",
+            "answer": "I don't know where you usually run. Can you tell me more about your running habits or the location you're referring to?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When and where is my sister's wedding?",
+            "answer": "I don't know when and where your sister's wedding is. Can you provide more information or context about the wedding?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my sister's name?",
+            "answer": "I don't know. We haven't discussed your sister's name in our conversation.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I eat meat?",
+            "answer": "Yes, you eat meat.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "What am I allergic to?",
+            "answer": "I don't know. Can you provide more context or information about your allergies, such as symptoms or potential triggers?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What car do I drive?",
+            "answer": "I'm not sure which car you drive. Could you please provide more information or context?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Where am I doing my masters?",
+            "answer": "I don't know where you're doing your master's. Can you please provide more context or information about your studies?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is my manager?",
+            "answer": "I don't know. Can you please provide more context or information about your work or organization?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my team called?",
+            "answer": "I don't know what your team is called. Can you please provide more context or information about your team?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What role do I want to move into next year?",
+            "answer": "I don't know what role you're currently in or what your career goals are. Can you tell me more about your current situation and what you're looking to achieve next year?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I prefer coffee or tea?",
+            "answer": "I don't know.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "When is my birthday?",
+            "answer": "I don't know when your birthday is. Can you tell me?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What year was I born?",
+            "answer": "I don't know. You haven't told me your birth year.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How much RAM does my laptop have?",
+            "answer": "I don't know the specific details about your laptop. Can you please check your laptop's specifications or settings to find out the amount of RAM it has?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite movie?",
+            "answer": "I don't know. We haven't discussed your favourite movie before.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite band?",
+            "answer": "I don't know. We haven't discussed your favourite band yet. Would you like to share it with me?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my one-on-one with my manager?",
+            "answer": "I don't know when your one-on-one with your manager is scheduled. Can you please check your calendar or ask your manager directly for the details?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When does my gym membership expire?",
+            "answer": "I don't know when your gym membership expires. Can you please provide me with the details of your membership, such as the gym name and the date you signed up?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which language am I learning?",
+            "answer": "I don't know. We haven't discussed any language learning yet.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which app am I using to learn a language?",
+            "answer": "I don't know. Can you tell me which app you're using to learn a language?",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What are the last four digits of my car number?",
+            "answer": "I don't know. I'm a text-based AI assistant and do not have access to your personal information, including your car's registration details.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          }
+        ]
+      },
+      "rag": {
+        "accuracy": 0.0,
+        "accuracy_ci95": [
+          0.0,
+          0.0964
+        ],
+        "abstention_rate": 0.861,
+        "abstention_ci95": [
+          0.7134,
+          0.9392
+        ],
+        "hallucination_rate": 0.139,
+        "hallucination_ci95": [
+          0.0608,
+          0.2866
+        ],
+        "citation_rate": 0.0,
+        "citation_ci95": [
+          0.0,
+          0.0964
+        ],
+        "model_citation_rate": 0.0,
+        "counts": {
+          "correct": 0,
+          "abstained": 31,
+          "hallucinated": 5,
+          "cited": 0,
+          "cited_by_model": 0
+        },
+        "n": 36,
+        "seconds": 154.9,
+        "rows": [
+          {
+            "q": "Who founded Helix Robotics and in which city?",
+            "answer": "I don't know who founded Helix Robotics or in which city.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where is Helix Robotics headquartered now?",
+            "answer": "I don't know the current location of Helix Robotics' headquarters.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many people does Helix employ?",
+            "answer": "I don't know the current number of employees at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit 2?",
+            "answer": "I don't know the rated payload of the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit Lite?",
+            "answer": "I don't know the rated payload of the Orbit Lite.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What compute module does the Compass stack run on?",
+            "answer": "The Compass stack runs on the Raspberry Pi Compute Module 4.",
+            "correct": false,
+            "abstained": false,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Who is Helix's largest customer?",
+            "answer": "I don't know who Helix's largest customer is.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was Helix's revenue in FY2024-25?",
+            "answer": "I don't know the specific revenue of Helix for FY2024-25.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who chairs the Helix board?",
+            "answer": "I don't know who chairs the Helix board.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the maximum loaded speed of the Orbit 2?",
+            "answer": "I don't know the maximum loaded speed of the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long does the Orbit 2 take to charge from 20 to 90 percent?",
+            "answer": "I don't know the specific charging time for the Orbit 2 from 20 to 90 percent. Can you provide more context or information about the Orbit 2, such as its model or manufacturer?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "At what battery percentage does an Orbit 2 return to its dock?",
+            "answer": "The Orbit 2 returns to its dock at 20% battery.",
+            "correct": false,
+            "abstained": false,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Which lidar does the Orbit 2 use?",
+            "answer": "I don't know which lidar the Orbit 2 uses.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the Orbit 2 positioning accuracy against fiducial markers?",
+            "answer": "I don't know the specific positioning accuracy of the Orbit 2 against fiducial markers. Can you provide more context or information about the Orbit 2?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long is the Orbit 2 warranty?",
+            "answer": "I don't know the specific warranty details for the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the current stable version of Compass?",
+            "answer": "I don't know the current stable version of Compass.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the fleet coordination layer of Compass called?",
+            "answer": "I don't know the specific name of the fleet coordination layer of Compass.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots can Conductor coordinate per warehouse?",
+            "answer": "I don't know the specific details about Conductor's capabilities or warehouse coordination. Can you provide more context or information about Conductor?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How quickly do emergency stop commands reach every robot?",
+            "answer": "Emergency stop commands typically reach all robots within milliseconds, depending on the network and communication protocols used.",
+            "correct": false,
+            "abstained": false,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "On which port does the Compass REST API listen?",
+            "answer": "I don't know the specific port on which the Compass REST API listens. Can you provide more context or information about the Compass REST API you are referring to?",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who leads the Compass team?",
+            "answer": "I don't know who leads the Compass team.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many days of paid leave do Helix employees get per year?",
+            "answer": "I don't know the specific number of paid leave days for Helix employees per year.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the annual learning budget per employee at Helix?",
+            "answer": "I don't know the specific annual learning budget per employee at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the notice period at Helix?",
+            "answer": "I don't know the specific notice period for Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the referral bonus for an engineering hire?",
+            "answer": "I don't know the specific referral bonus for an engineering hire. Referral bonuses can vary widely depending on the company, location, and other factors. If you're looking for information on a specifi",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the acknowledgement target for a Severity 1 incident?",
+            "answer": "I don't know the specific acknowledgement target for a Severity 1 incident. It may vary depending on the organization, industry, or specific incident response plan.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was the most common field fault in 2025?",
+            "answer": "I don't know. I'm a large language model, I don't have have access to real-time data or information beyond my knowledge cutoff in December 2023. I'm not aware of any data on field faults in 2025.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How often is preventive maintenance scheduled on Orbit robots?",
+            "answer": "Preventive maintenance for Orbit robots is typically scheduled every 6 months.",
+            "correct": false,
+            "abstained": false,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Who is the head of field operations at Helix?",
+            "answer": "I don't know who the head of field operations at Helix is.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the payload target of the Orbit 3?",
+            "answer": "I don't know the payload target of the Orbit 3.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is Compass 4.0 planned for release?",
+            "answer": "I don't know the planned release date for Compass 4.0.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which interface will Compass 4.0 use to support third-party robots?",
+            "answer": "Compass 4.0 will use the ROS (Robot Operating System) interface to support third-party robots.",
+            "correct": false,
+            "abstained": false,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Where did Helix open a sales office in 2026?",
+            "answer": "I don't know.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the codename of the piece-picking arm research project?",
+            "answer": "I don't know the codename of the piece-picking arm research project.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots does Helix aim to have deployed by December 2026?",
+            "answer": "I don't know the specific deployment plans of Helix regarding robots by December 2026.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who owns the Helix product roadmap?",
+            "answer": "I don't know who owns the Helix product roadmap.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          }
+        ]
+      }
+    },
+    "B": {
+      "flags": {
+        "routing": false,
+        "memory": true,
+        "rag": false
+      },
+      "memory": {
+        "recall_accuracy": 1.0,
+        "recall_ci95": [
+          0.8865,
+          1.0
+        ],
+        "correct": 30,
+        "n": 30,
+        "facts_stored": 19,
+        "egress": {
+          "calls": 54,
+          "cloud_calls": 0,
+          "cloud_calls_with_private_context": 0
+        },
+        "seconds": 177.6,
+        "rows": [
+          {
+            "q": "What is my name?",
+            "answer": "Your name is Arjun Mehta.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I live?",
+            "answer": "You live in Koramangala, Bangalore.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What company do I work for?",
+            "answer": "You work for PayLoop as a data engineer.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my job title?",
+            "answer": "Your job title is Data Engineer.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which programming language do I like the most?",
+            "answer": "Your favourite programming language is Rust.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which editor do I use?",
+            "answer": "You use Neovim as your editor.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my dog's name?",
+            "answer": "Your dog's name is Bruno.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How old is my dog?",
+            "answer": "Your dog, Bruno, is 4 years old.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What race am I training for?",
+            "answer": "You are training for the Bangalore half marathon.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I usually run?",
+            "answer": "You usually run in the mornings at Cubbon Park.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When and where is my sister's wedding?",
+            "answer": "Your sister Kavya's wedding is in December in Mysore.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my sister's name?",
+            "answer": "Your sister's name is Kavya.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I eat meat?",
+            "answer": "No, you prefer vegetarian food.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What am I allergic to?",
+            "answer": "You are allergic to peanuts.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What car do I drive?",
+            "answer": "You drive a blue Honda City.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where am I doing my masters?",
+            "answer": "You are doing your master's in data science at BITS Pilani.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is my manager?",
+            "answer": "Your manager's name is Devika, and you are part of the Ledger Core team.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my team called?",
+            "answer": "Your team is called Ledger Core.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What role do I want to move into next year?",
+            "answer": "You want to switch to a machine learning role next year.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I prefer coffee or tea?",
+            "answer": "You prefer filter coffee, never tea.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my birthday?",
+            "answer": "Your birthday is on 14 February, and you were born in 1998.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What year was I born?",
+            "answer": "You were born in 1998.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How much RAM does my laptop have?",
+            "answer": "You have 32 GB of RAM in your MacBook Pro.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite movie?",
+            "answer": "Your favourite movie is Interstellar.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite band?",
+            "answer": "Your favourite band is Radiohead.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my one-on-one with my manager?",
+            "answer": "You have a weekly one-on-one with your manager, Devika, every Thursday at 3 pm.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When does my gym membership expire?",
+            "answer": "Your gym membership at Cult Fit expires on 30 October.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which language am I learning?",
+            "answer": "You are learning Kannada using the Bhasha app.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which app am I using to learn a language?",
+            "answer": "You are using the Bhasha app to learn Kannada.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What are the last four digits of my car number?",
+            "answer": "The last four digits of your car number are 4471.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          }
+        ]
+      },
+      "rag": {
+        "accuracy": 0.0,
+        "accuracy_ci95": [
+          0.0,
+          0.0964
+        ],
+        "abstention_rate": 1.0,
+        "abstention_ci95": [
+          0.9036,
+          1.0
+        ],
+        "hallucination_rate": 0.0,
+        "hallucination_ci95": [
+          0.0,
+          0.0964
+        ],
+        "citation_rate": 0.0,
+        "citation_ci95": [
+          0.0,
+          0.0964
+        ],
+        "model_citation_rate": 0.0,
+        "counts": {
+          "correct": 0,
+          "abstained": 36,
+          "hallucinated": 0,
+          "cited": 0,
+          "cited_by_model": 0
+        },
+        "n": 36,
+        "seconds": 58.0,
+        "rows": [
+          {
+            "q": "Who founded Helix Robotics and in which city?",
+            "answer": "I don't know who founded Helix Robotics or in which city.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where is Helix Robotics headquartered now?",
+            "answer": "I don't know where Helix Robotics is headquartered now.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many people does Helix employ?",
+            "answer": "I don't know how many people Helix Robotics employs.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit 2?",
+            "answer": "I don't know the rated payload of the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit Lite?",
+            "answer": "I don't know the rated payload of the Orbit Lite.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What compute module does the Compass stack run on?",
+            "answer": "I don't know which compute module the Compass stack runs on.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is Helix's largest customer?",
+            "answer": "I don't know who Helix's largest customer is.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was Helix's revenue in FY2024-25?",
+            "answer": "I don't know Helix's revenue for FY2024-25.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who chairs the Helix board?",
+            "answer": "I don't know who chairs the Helix board.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the maximum loaded speed of the Orbit 2?",
+            "answer": "I don't know the maximum loaded speed of the Orbit 2.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long does the Orbit 2 take to charge from 20 to 90 percent?",
+            "answer": "I don't know how long it takes for the Orbit 2 to charge from 20 to 90 percent.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "At what battery percentage does an Orbit 2 return to its dock?",
+            "answer": "I don't know at what battery percentage the Orbit 2 returns to its dock.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which lidar does the Orbit 2 use?",
+            "answer": "I don't know which lidar the Orbit 2 uses.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the Orbit 2 positioning accuracy against fiducial markers?",
+            "answer": "I don't know the Orbit 2's positioning accuracy against fiducial markers.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long is the Orbit 2 warranty?",
+            "answer": "I don't know the length of the Orbit 2 warranty.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the current stable version of Compass?",
+            "answer": "I don't know the current stable version of Compass.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the fleet coordination layer of Compass called?",
+            "answer": "I don't know the specific name of the fleet coordination layer in Compass.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots can Conductor coordinate per warehouse?",
+            "answer": "I don't know the maximum number of robots that Conductor can coordinate per warehouse.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How quickly do emergency stop commands reach every robot?",
+            "answer": "I don't know the exact speed at which emergency stop commands reach every robot in Conductor.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "On which port does the Compass REST API listen?",
+            "answer": "I don't know the default port number that the Compass REST API listens on.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who leads the Compass team?",
+            "answer": "I don't know who leads the Compass team.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many days of paid leave do Helix employees get per year?",
+            "answer": "I don't know the number of paid leave days that Helix employees receive per year.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the annual learning budget per employee at Helix?",
+            "answer": "I don't know the annual learning budget per employee at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the notice period at Helix?",
+            "answer": "I don't know the notice period at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the referral bonus for an engineering hire?",
+            "answer": "I don't know the referral bonus for an engineering hire at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the acknowledgement target for a Severity 1 incident?",
+            "answer": "I don't know the acknowledgement target for a Severity 1 incident at Helix.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was the most common field fault in 2025?",
+            "answer": "I don't know the most common field fault in 2025.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How often is preventive maintenance scheduled on Orbit robots?",
+            "answer": "I don't know how often preventive maintenance is scheduled on Orbit robots.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is the head of field operations at Helix?",
+            "answer": "I don't know who the head of field operations at Helix is.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the payload target of the Orbit 3?",
+            "answer": "I don't know the payload target of the Orbit 3.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is Compass 4.0 planned for release?",
+            "answer": "I don't know when Compass 4.0 is planned for release.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which interface will Compass 4.0 use to support third-party robots?",
+            "answer": "I don't know which interface Compass 4.0 will use to support third-party robots.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where did Helix open a sales office in 2026?",
+            "answer": "I don't know where Helix opened a sales office in 2026.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the codename of the piece-picking arm research project?",
+            "answer": "I don't know the codename of the piece-picking arm research project.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots does Helix aim to have deployed by December 2026?",
+            "answer": "I don't know how many robots Helix aims to have deployed by December 2026.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who owns the Helix product roadmap?",
+            "answer": "I don't know who owns the Helix product roadmap.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 0,
+            "model": "llama3.2-3b"
+          }
+        ]
+      }
+    },
+    "C": {
+      "flags": {
+        "routing": false,
+        "memory": false,
+        "rag": true
+      },
+      "memory": {
+        "recall_accuracy": 0.0,
+        "recall_ci95": [
+          0.0,
+          0.1135
+        ],
+        "correct": 0,
+        "n": 30,
+        "facts_stored": 0,
+        "egress": {
+          "calls": 54,
+          "cloud_calls": 0,
+          "cloud_calls_with_private_context": 0
+        },
+        "seconds": 249.2,
+        "rows": [
+          {
+            "q": "What is my name?",
+            "answer": "I don't know your name.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I live?",
+            "answer": "I don't know where you live.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What company do I work for?",
+            "answer": "You work for Helix Robotics Private Limited.\n\nSources: [1] 04_hr_policies.md; [3] 01_company_overview.md",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my job title?",
+            "answer": "I don't know your job title from the provided context.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which programming language do I like the most?",
+            "answer": "I don't know which programming language you like the most.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which editor do I use?",
+            "answer": "I don't know which editor you should use.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my dog's name?",
+            "answer": "I don't know your dog's name. We didn't discuss your dog in our conversation.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How old is my dog?",
+            "answer": "I don't know. There is no information provided about your dog in the context.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What race am I training for?",
+            "answer": "I don't know what race you are training for.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I usually run?",
+            "answer": "I don't know where you usually run. The provided context only mentions field support and incident procedures, as well as navigation and fleet-coordination software, but does not mention personal activ",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When and where is my sister's wedding?",
+            "answer": "I don't know. There is no information about your sister's wedding in the provided context.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my sister's name?",
+            "answer": "I don't know your sister's name.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I eat meat?",
+            "answer": "I don't know. There is no information provided in the context about your dietary preferences or restrictions.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What am I allergic to?",
+            "answer": "I don't know. There is no information provided in the context about your allergies.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What car do I drive?",
+            "answer": "I don't know what car you drive. The provided context only discusses Helix Robotics and their products, including the Orbit series of robots, but does not mention personal vehicles.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where am I doing my masters?",
+            "answer": "I don't know.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is my manager?",
+            "answer": "I don't know who your manager is.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my team called?",
+            "answer": "I don't know what your team is called.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What role do I want to move into next year?",
+            "answer": "I don't know. The provided context does not mention your current role or any plans for a role change.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I prefer coffee or tea?",
+            "answer": "I don't know your personal preferences.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my birthday?",
+            "answer": "I don't know when your birthday is.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What year was I born?",
+            "answer": "I don't know. There is no information about your birth year in the provided context.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How much RAM does my laptop have?",
+            "answer": "I don't know. The provided context does not mention the RAM capacity of the laptops.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite movie?",
+            "answer": "I don't know. We didn't discuss your favourite movie in our conversation.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite band?",
+            "answer": "I don't know what your favourite band is.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my one-on-one with my manager?",
+            "answer": "I don't know when your one-on-one with your manager is scheduled. The provided context only mentions performance reviews, which happen twice a year, in April and October, but it does not mention one-o",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When does my gym membership expire?",
+            "answer": "I don't know. The provided context doesn't mention anything about a gym membership.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which language am I learning?",
+            "answer": "I don't know.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which app am I using to learn a language?",
+            "answer": "I don't know. There is no mention of a language learning app in the provided context.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What are the last four digits of my car number?",
+            "answer": "I don't know. The provided context is about Helix robotics and does not mention cars or car numbers.",
+            "correct": false,
+            "n_hits": 0,
+            "model": "llama3.2-3b"
+          }
+        ]
+      },
+      "rag": {
+        "accuracy": 0.861,
+        "accuracy_ci95": [
+          0.7134,
+          0.9392
+        ],
+        "abstention_rate": 0.111,
+        "abstention_ci95": [
+          0.0441,
+          0.2532
+        ],
+        "hallucination_rate": 0.028,
+        "hallucination_ci95": [
+          0.0049,
+          0.1417
+        ],
+        "citation_rate": 0.944,
+        "citation_ci95": [
+          0.8186,
+          0.9846
+        ],
+        "model_citation_rate": 0.556,
+        "counts": {
+          "correct": 31,
+          "abstained": 4,
+          "hallucinated": 1,
+          "cited": 34,
+          "cited_by_model": 20
+        },
+        "n": 36,
+        "seconds": 173.8,
+        "rows": [
+          {
+            "q": "Who founded Helix Robotics and in which city?",
+            "answer": "Helix Robotics was founded in March 2019 by Anjali Deshmukh and Rohan Kulkarni in Pune.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where is Helix Robotics headquartered now?",
+            "answer": "According to [1], Helix Robotics' headquarters moved from Pune to Whitefield, Bangalore in January 2023.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many people does Helix employ?",
+            "answer": "As of the 2025 annual report, Helix employs 214 people across engineering, manufacturing, field operations, and sales.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit 2?",
+            "answer": "The rated payload of the Orbit 2 is 600 kg. [1]",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit Lite?",
+            "answer": "I do not know the rated payload of the Orbit Lite from the provided context.\n\nSources: [1] 02_orbit2_spec.md; [2] 01_company_overview.md",
+            "correct": false,
+            "abstained": true,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What compute module does the Compass stack run on?",
+            "answer": "The Compass stack runs on ROS 2 Humble, which is built on top of Ubuntu 22.04.\n\nSources: [1] 03_compass_navigation.md",
+            "correct": false,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is Helix's largest customer?",
+            "answer": "[2] Helix's largest customer is QuickCart Logistics, which operates 11 Helix-equipped fulfilment centres.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was Helix's revenue in FY2024-25?",
+            "answer": "According to [1], Helix's revenue for FY2024-25 was 187 crore rupees.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who chairs the Helix board?",
+            "answer": "Meera Iyer chairs the Helix board, as stated in [1] (01_company_overview.md).",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the maximum loaded speed of the Orbit 2?",
+            "answer": "According to [1], the maximum loaded speed of the Orbit 2 is 1.5 metres per second.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long does the Orbit 2 take to charge from 20 to 90 percent?",
+            "answer": "According to [2], charging from 20 percent to 90 percent takes 55 minutes on the Helix DockPro charger.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "At what battery percentage does an Orbit 2 return to its dock?",
+            "answer": "According to [1], the Orbit 2 automatically returns to a dock when its charge falls below 22 percent.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which lidar does the Orbit 2 use?",
+            "answer": "The Orbit 2 uses a Hokuyo UST-10LX lidar with a 10 metre range.\n\nSources: [3] 02_orbit2_spec.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the Orbit 2 positioning accuracy against fiducial markers?",
+            "answer": "I do not know the Orbit 2's positioning accuracy against fiducial markers.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long is the Orbit 2 warranty?",
+            "answer": "According to [1], the Orbit 2 ships with a 24-month warranty, which is extendable to 48 months.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the current stable version of Compass?",
+            "answer": "According to the context, the current stable release of Compass is Compass 3.4, released in February 2026.\n\nSources: [1] 03_compass_navigation.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the fleet coordination layer of Compass called?",
+            "answer": "The fleet coordination layer of Compass is called Conductor.\n\nSources: [1] 03_compass_navigation.md; [2] 03_compass_navigation.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots can Conductor coordinate per warehouse?",
+            "answer": "Conductor can coordinate up to 400 robots per warehouse on a single server. [1]",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How quickly do emergency stop commands reach every robot?",
+            "answer": "According to [1], emergency stop commands propagate to every robot within 150 milliseconds.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "On which port does the Compass REST API listen?",
+            "answer": "The Compass REST API listens on port 8443. [1]",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who leads the Compass team?",
+            "answer": "Priya Nair leads the Compass team.\n\nSources: [2] 03_compass_navigation.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many days of paid leave do Helix employees get per year?",
+            "answer": "According to [1], Helix employees receive 24 days of paid leave per year, accrued monthly, plus 10 public holidays chosen each January.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the annual learning budget per employee at Helix?",
+            "answer": "According to the HR policies [1], every employee at Helix receives a learning budget of 40,000 rupees per year.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the notice period at Helix?",
+            "answer": "I do not know the notice period at Helix from the provided context.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the referral bonus for an engineering hire?",
+            "answer": "According to [1] and [2], the referral bonus for a successful engineering hire is 50,000 rupees, paid after the new hire completes three months.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the acknowledgement target for a Severity 1 incident?",
+            "answer": "According to [1], the acknowledgement target for a Severity 1 incident is within 15 minutes.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was the most common field fault in 2025?",
+            "answer": "According to [1], the most common field fault in 2025 was drive-wheel wear on polished concrete floors, accounting for 31 percent of all tickets.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How often is preventive maintenance scheduled on Orbit robots?",
+            "answer": "According to [1] and [2], preventive maintenance is scheduled every 1,500 operating hours on Orbit robots, taking about 45 minutes per robot.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is the head of field operations at Helix?",
+            "answer": "I do not know who the head of field operations at Helix is.\n\nSources: [2] 01_company_overview.md",
+            "correct": false,
+            "abstained": true,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the payload target of the Orbit 3?",
+            "answer": "The payload target of the Orbit 3 is 1,000 kg.\n\nSources: [1] 06_roadmap_2026.md; [2] 02_orbit2_spec.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is Compass 4.0 planned for release?",
+            "answer": "Compass 4.0 is planned for release in November 2026.\n\nSources: [1] 03_compass_navigation.md; [2] 06_roadmap_2026.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which interface will Compass 4.0 use to support third-party robots?",
+            "answer": "According to [3] (06_roadmap_2026.md), Compass 4.0 will support third-party robots via the VDA 5050 interface.",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where did Helix open a sales office in 2026?",
+            "answer": "Helix opened a sales office in Dubai in April 2026.\n\nSources: [2] 06_roadmap_2026.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the codename of the piece-picking arm research project?",
+            "answer": "The codename of the piece-picking arm research project is Grasp.\n\nSources: [2] 06_roadmap_2026.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots does Helix aim to have deployed by December 2026?",
+            "answer": "Helix aims to have 500 deployed robots by December 2026.\n\nSources: [1] 06_roadmap_2026.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who owns the Helix product roadmap?",
+            "answer": "The Helix product roadmap is owned by the chief product officer, Karthik Menon, and is reviewed by the board every quarter. [1]",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          }
+        ]
+      }
+    },
+    "D": {
+      "flags": {
+        "routing": true,
+        "memory": true,
+        "rag": true
+      },
+      "memory": {
+        "recall_accuracy": 0.933,
+        "recall_ci95": [
+          0.7868,
+          0.9815
+        ],
+        "correct": 28,
+        "n": 30,
+        "facts_stored": 19,
+        "egress": {
+          "calls": 54,
+          "cloud_calls": 0,
+          "cloud_calls_with_private_context": 0
+        },
+        "seconds": 547.9,
+        "rows": [
+          {
+            "q": "What is my name?",
+            "answer": "[1] (03_compass_navigation.md) # Compass Navigation Stack Compass is Helix Robotics' proprietary navigation and fleet-coordination software. Version 1.0 shipped in September 2021. The current stable r",
+            "correct": false,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I live?",
+            "answer": "You live in Koramangala, Bangalore.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What company do I work for?",
+            "answer": "You work as a data engineer at a fintech called PayLoop.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my job title?",
+            "answer": "You work as a data engineer at a fintech called PayLoop.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which programming language do I like the most?",
+            "answer": "Your favourite programming language is Rust.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which editor do I use?",
+            "answer": "You use Neovim as your editor.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "What is my dog's name?",
+            "answer": "Your dog's name is Bruno.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How old is my dog?",
+            "answer": "Your dog Bruno is 4 years old.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "What race am I training for?",
+            "answer": "You are training for the Bangalore half marathon.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where do I usually run?",
+            "answer": "You usually run in the mornings at Cubbon Park.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When and where is my sister's wedding?",
+            "answer": "Your sister Kavya's wedding is in December in Mysore.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my sister's name?",
+            "answer": "Your sister's name is Kavya.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I eat meat?",
+            "answer": "No, you do not eat meat.",
+            "correct": false,
+            "n_hits": 5,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "What am I allergic to?",
+            "answer": "You are allergic to peanuts.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What car do I drive?",
+            "answer": "You drive a blue Honda City.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Where am I doing my masters?",
+            "answer": "You are doing your master's in data science at BITS Pilani.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who is my manager?",
+            "answer": "Your manager's name is Devika, and you are part of the Ledger Core team.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my team called?",
+            "answer": "Your team is called Ledger Core.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What role do I want to move into next year?",
+            "answer": "You want to switch to a machine learning role next year.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Do I prefer coffee or tea?",
+            "answer": "You prefer filter coffee.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "When is my birthday?",
+            "answer": "Your birthday is on 14 February and you were born in 1998.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What year was I born?",
+            "answer": "You were born in 1998.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How much RAM does my laptop have?",
+            "answer": "You have 32 GB of RAM in your MacBook Pro.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite movie?",
+            "answer": "Your favourite movie is Interstellar.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is my favourite band?",
+            "answer": "Your favourite band is Radiohead.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is my one-on-one with my manager?",
+            "answer": "You have a weekly one-on-one with your manager, Devika, every Thursday at 3 pm.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When does my gym membership expire?",
+            "answer": "Your gym membership at Cult Fit expires on 30 October.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which language am I learning?",
+            "answer": "You are learning Kannada using the Bhasha app.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which app am I using to learn a language?",
+            "answer": "You are using the Bhasha app to learn Kannada.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What are the last four digits of my car number?",
+            "answer": "The last four digits of your car number are 4471.",
+            "correct": true,
+            "n_hits": 5,
+            "model": "llama3.2-3b"
+          }
+        ]
+      },
+      "rag": {
+        "accuracy": 0.889,
+        "accuracy_ci95": [
+          0.7468,
+          0.9559
+        ],
+        "abstention_rate": 0.083,
+        "abstention_ci95": [
+          0.0287,
+          0.2183
+        ],
+        "hallucination_rate": 0.028,
+        "hallucination_ci95": [
+          0.0049,
+          0.1417
+        ],
+        "citation_rate": 0.972,
+        "citation_ci95": [
+          0.8583,
+          0.9951
+        ],
+        "model_citation_rate": 0.861,
+        "counts": {
+          "correct": 32,
+          "abstained": 3,
+          "hallucinated": 1,
+          "cited": 35,
+          "cited_by_model": 31
+        },
+        "n": 36,
+        "seconds": 289.9,
+        "rows": [
+          {
+            "q": "Who founded Helix Robotics and in which city?",
+            "answer": "Helix Robotics was founded in March 2019 by Anjali Deshmukh and Rohan Kulkarni in Pune.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Where is Helix Robotics headquartered now?",
+            "answer": "Helix Robotics' headquarters moved from Pune to Whitefield, Bangalore in January 2023.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many people does Helix employ?",
+            "answer": "As of the 2025 annual report, Helix Robotics employs 214 people across engineering, manufacturing, field operations, and sales.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit 2?",
+            "answer": "The rated payload of the Orbit 2 is 600 kg.\n\nSources: [1] (02_orbit2_spec.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the rated payload of the Orbit Lite?",
+            "answer": "The rated payload of the Orbit Lite is 250 kg.\n\nSources: [1] (02_orbit2_spec.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What compute module does the Compass stack run on?",
+            "answer": "The Compass stack runs on the NVIDIA Jetson Xavier NX compute module.\n\nSources: [1] 03_compass_navigation.md",
+            "correct": false,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Who is Helix's largest customer?",
+            "answer": "Helix's largest customer is QuickCart Logistics, which operates 11 Helix-equipped fulfilment centres.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was Helix's revenue in FY2024-25?",
+            "answer": "Helix's revenue for FY2024-25 was 187 crore rupees.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who chairs the Helix board?",
+            "answer": "Meera Iyer chairs the Helix board.\n\nSources: [1] 01_company_overview.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the maximum loaded speed of the Orbit 2?",
+            "answer": "The maximum loaded speed of the Orbit 2 is 1.5 metres per second.\n\nSources: [1] (02_orbit2_spec.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long does the Orbit 2 take to charge from 20 to 90 percent?",
+            "answer": "The Orbit 2 takes 55 minutes to charge from 20 percent to 90 percent using the Helix DockPro charger.\n\nSources: [1] (02_orbit2_spec.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "At what battery percentage does an Orbit 2 return to its dock?",
+            "answer": "An Orbit 2 returns to its dock when its charge falls below 22 percent.\n\nSources: [1] (02_orbit2_spec.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Which lidar does the Orbit 2 use?",
+            "answer": "The Orbit 2 uses a Hokuyo UST-10LX lidar with a 10 metre range.\n\nSources: [3] (02_orbit2_spec.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the Orbit 2 positioning accuracy against fiducial markers?",
+            "answer": "I do not know the Orbit 2's positioning accuracy against fiducial markers.\n\nSources: [1] (02_orbit2_spec.md)",
+            "correct": false,
+            "abstained": true,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How long is the Orbit 2 warranty?",
+            "answer": "The Orbit 2 ships with a 24-month warranty, which can be extended to 48 months.\n\nSources: [1] (02_orbit2_spec.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the current stable version of Compass?",
+            "answer": "The current stable release of Compass is version 3.4, released in February 2026.\n\nSources: [1] (03_compass_navigation.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the fleet coordination layer of Compass called?",
+            "answer": "The fleet coordination layer of Compass is called Conductor.\n\nSources: [1] (03_compass_navigation.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots can Conductor coordinate per warehouse?",
+            "answer": "Conductor can coordinate up to 400 robots per warehouse on a single server.\n\nSources: [1] (03_compass_navigation.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How quickly do emergency stop commands reach every robot?",
+            "answer": "Emergency stop commands propagate to every robot within 150 milliseconds.\n\nSources: [1] (03_compass_navigation.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "On which port does the Compass REST API listen?",
+            "answer": "The Compass REST API listens on port 8443.\n\nSources: [1] (03_compass_navigation.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who leads the Compass team?",
+            "answer": "Priya Nair leads the Compass team.\n\nSources: [1] (03_compass_navigation.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many days of paid leave do Helix employees get per year?",
+            "answer": "Helix employees receive 24 days of paid leave per year, accrued monthly, plus 10 public holidays chosen each January.\n\nSources: [1] (04_hr_policies.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the annual learning budget per employee at Helix?",
+            "answer": "Every employee at Helix receives a learning budget of 40,000 rupees per year.\n\nSources: [1] (04_hr_policies.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the notice period at Helix?",
+            "answer": "I don't know the notice period at Helix from the provided context.",
+            "correct": false,
+            "abstained": true,
+            "cited": false,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the referral bonus for an engineering hire?",
+            "answer": "The referral bonus for a successful engineering hire at Helix is 50,000 rupees, paid after the new hire completes three months.\n\nSources: [1] (04_hr_policies.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the acknowledgement target for a Severity 1 incident?",
+            "answer": "For a Severity 1 incident, the acknowledgement target is within 15 minutes.\n\nSources: [1] (05_field_support.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What was the most common field fault in 2025?",
+            "answer": "The most common field fault in 2025 was drive-wheel wear on polished concrete floors, accounting for 31 percent of all tickets.\n\nSources: [1] 05_field_support.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How often is preventive maintenance scheduled on Orbit robots?",
+            "answer": "Preventive maintenance is scheduled every 1,500 operating hours and takes about 45 minutes per robot.\n\nSources: [1] 05_field_support.md",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Who is the head of field operations at Helix?",
+            "answer": "I do not know who the head of field operations at Helix is.\n\nSources: [2] 01_company_overview.md",
+            "correct": false,
+            "abstained": true,
+            "cited": true,
+            "cited_by_model": false,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the payload target of the Orbit 3?",
+            "answer": "The payload target of the Orbit 3 is 1,000 kg.\n\nSources: [1] (06_roadmap_2026.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "When is Compass 4.0 planned for release?",
+            "answer": "Compass 4.0 is planned for release in November 2026.\n\nSources: [2] (06_roadmap_2026.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Which interface will Compass 4.0 use to support third-party robots?",
+            "answer": "Compass 4.0 will use the VDA 5050 interface to support third-party robots.\n\nSources: [2] (06_roadmap_2026.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "qwen2.5-coder-3b"
+          },
+          {
+            "q": "Where did Helix open a sales office in 2026?",
+            "answer": "Helix opened a sales office in Dubai in April 2026.\n\nSources: [2] (06_roadmap_2026.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "What is the codename of the piece-picking arm research project?",
+            "answer": "The codename of the piece-picking arm research project is Grasp.\n\nSources: [2] (06_roadmap_2026.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "How many robots does Helix aim to have deployed by December 2026?",
+            "answer": "Helix aims to have 500 deployed robots by December 2026.\n\nSources: [1] (06_roadmap_2026.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          },
+          {
+            "q": "Who owns the Helix product roadmap?",
+            "answer": "The Helix product roadmap is owned by the chief product officer, Karthik Menon.\n\nSources: [1] (06_roadmap_2026.md)",
+            "correct": true,
+            "abstained": false,
+            "cited": true,
+            "cited_by_model": true,
+            "n_passages": 4,
+            "model": "llama3.2-3b"
+          }
+        ]
+      }
+    }
+  },
+  "privacy_check": {
+    "pool": [
+      "qwen2.5-coder-3b",
+      "llama3.2-3b",
+      "llama3.2-1b",
+      "moondream-1.8b",
+      "gemini-3.1-flash-lite",
+      "claude-haiku-5.5",
+      "claude-sonnet-5.5",
+      "gpt-5-mini"
+    ],
+    "policy": "local",
+    "recall_accuracy": 0.933,
+    "recall_ci95": [
+      0.7868,
+      0.9815
+    ],
+    "egress": {
+      "calls": 54,
+      "cloud_calls": 0,
+      "cloud_calls_with_private_context": 0
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@startuml class_diagram_bench
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam classAttributeIconSize 0
+skinparam ArrowColor #333333
+skinparam classBorderColor #1F4E79
+skinparam classBackgroundColor #FFFFFF
+skinparam classHeaderBackgroundColor #EEF4FC
+skinparam stereotypeCBackgroundColor #EEF4FC
+skinparam packageBorderColor #8A8984
+skinparam sequenceParticipantBorderColor #1F4E79
+skinparam sequenceParticipantBackgroundColor #EEF4FC
+skinparam sequenceLifeLineBorderColor #8A8984
+skinparam sequenceGroupBorderColor #1F4E79
+skinparam sequenceGroupHeaderFontColor #1F4E79
+skinparam activityBorderColor #1F4E79
+skinparam activityBackgroundColor #EEF4FC
+skinparam activityDiamondBorderColor #1F4E79
+skinparam activityDiamondBackgroundColor #FFFFFF
+skinparam swimlaneBorderColor #8A8984
+skinparam noteBackgroundColor #FFFBEA
+skinparam noteBorderColor #B8A86A
+
+set separator none
+hide circle
+hide empty members
+skinparam packageStyle rectangle
+skinparam nodesep 30
+skinparam ranksep 45
+skinparam linetype polyline
+package "bench.runner.py" {
+  class "bench.runner" as M_bench_runner <<module>> {
+    {static} +check_for(task: dict): dict
+    {static} +load_tasks(split: str | None, path: Path): list[dict]
+    {static} +run_one(spec: ModelSpec, task: dict): dict
+    {static} +run(specs: dict[str, ModelSpec], tasks: list[dict], raw_path: Path, log): dict[tuple, dict]
+    {static} +scorecards_from(cache: dict[tuple, dict], specs: dict[str, ModelSpec], tasks: list[dict], benchmark: str): dict[str, dict]
+    {static} +calibrate(spec: ModelSpec, raw_path: Path | None, out_dir: Path | None, log): Path
+    {static} +regrade(cache: dict[tuple, dict], tasks: list[dict]): int
+  }
+}
+package "bench.graders.py" {
+  class "bench.graders" as M_bench_graders <<module>> {
+    {static} +extract_code(text: str): str
+    {static} +grade_code(text: str, chk: dict): tuple[bool, str]
+    {static} +grade_number(text: str, chk: dict): tuple[bool, str]
+    {static} +normalize(s: str): str
+    {static} +grade_alias(text: str, chk: dict): tuple[bool, str]
+    {static} +grade_choice(text: str, chk: dict): tuple[bool, str]
+    {static} +grade_ifeval(text: str, chk: dict): tuple[bool, str]
+    {static} +grade(text: str, chk: dict): tuple[bool, str]
+  }
+}
+package "scorecard.py" {
+  class "scorecard" as M_scorecard <<module>> {
+    {static} +wilson(correct: int, n: int, z: float): tuple[float, float]
+    {static} +summarise(rows: list[dict]): dict
+    {static} +build(spec, rows_by_intent: dict[str, list[dict]], benchmark: str): dict
+    {static} +save(card: dict, directory: Path | None): Path
+    {static} +load_all(directory: Path | None): dict[str, dict]
+  }
+}
+class "providers" as M_providers <<module>>
+M_bench_runner ..> M_providers : generate()
+M_bench_runner ..> M_bench_graders : grade()
+M_bench_runner ..> M_scorecard : build(), save()
+@enduml

@@ -1,0 +1,99 @@
+{
+  "model": "moondream-1.8b",
+  "spec": {
+    "name": "moondream-1.8b",
+    "provider": "ollama",
+    "model": "moondream",
+    "local": true,
+    "vision": true,
+    "price_in": 0,
+    "price_out": 0,
+    "enabled": true,
+    "free_tier": false
+  },
+  "benchmark": "public_bench calibration split",
+  "created": "2026-10-20T10:12:12+0000",
+  "machine": "Linux x86_64 vm",
+  "intents": {
+    "coding": {
+      "eligible": true,
+      "n": 40,
+      "correct": 3,
+      "accuracy": 0.075,
+      "ci95": [
+        0.0258,
+        0.1986
+      ],
+      "median_latency_s": 0.609,
+      "p90_latency_s": 1.916,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 83.2,
+      "mean_tokens_out": 63.2,
+      "errors": 0
+    },
+    "writing": {
+      "eligible": true,
+      "n": 40,
+      "correct": 5,
+      "accuracy": 0.125,
+      "ci95": [
+        0.0546,
+        0.2611
+      ],
+      "median_latency_s": 1.203,
+      "p90_latency_s": 18.574,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 59.4,
+      "mean_tokens_out": 165.1,
+      "errors": 1
+    },
+    "search": {
+      "eligible": true,
+      "n": 40,
+      "correct": 0,
+      "accuracy": 0.0,
+      "ci95": [
+        0.0,
+        0.0876
+      ],
+      "median_latency_s": 0.089,
+      "p90_latency_s": 0.226,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 25.6,
+      "mean_tokens_out": 7.6,
+      "errors": 0
+    },
+    "reasoning": {
+      "eligible": true,
+      "n": 40,
+      "correct": 0,
+      "accuracy": 0.0,
+      "ci95": [
+        0.0,
+        0.0876
+      ],
+      "median_latency_s": 0.197,
+      "p90_latency_s": 0.378,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 92.4,
+      "mean_tokens_out": 24.8,
+      "errors": 0
+    },
+    "multimodal": {
+      "eligible": true,
+      "n": 40,
+      "correct": 7,
+      "accuracy": 0.175,
+      "ci95": [
+        0.0875,
+        0.3195
+      ],
+      "median_latency_s": 2.011,
+      "p90_latency_s": 3.092,
+      "mean_cost_usd": 0.0,
+      "mean_tokens_in": 750.2,
+      "mean_tokens_out": 1.3,
+      "errors": 0
+    }
+  }
+}

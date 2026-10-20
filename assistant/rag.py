@@ -48,6 +48,7 @@ def build_index(corpus_dir: Path | None = None, index_path: Path | None = None, 
         raise RuntimeError(f"no documents in {corpus_dir}")
     embs = providers.embed(chunks, embedder)
     index = {"chunks": chunks, "meta": meta, "embs": embs, "embedder": embedder or config.EMBEDDER}
+    index_path.parent.mkdir(parents=True, exist_ok=True)
     index_path.write_bytes(pickle.dumps(index))
     return {"documents": len(set(m[0] for m in meta)), "chunks": len(chunks), "dim": int(embs.shape[1])}
 

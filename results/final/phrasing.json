@@ -1,0 +1,1261 @@
+{
+  "note": "team-written prompts; robustness across phrasing, not the headline accuracy",
+  "all_text_only": {
+    "n": 150,
+    "correct": 141,
+    "accuracy": 0.94,
+    "ci95": [
+      0.8899,
+      0.9681
+    ]
+  },
+  "all_with_image_rule": {
+    "n": 150,
+    "correct": 146,
+    "accuracy": 0.9733,
+    "ci95": [
+      0.9334,
+      0.9896
+    ]
+  },
+  "by_style": {
+    "direct": {
+      "n": 50,
+      "correct": 50,
+      "accuracy": 1.0,
+      "ci95": [
+        0.9286,
+        1.0
+      ]
+    },
+    "casual": {
+      "n": 50,
+      "correct": 47,
+      "accuracy": 0.94,
+      "ci95": [
+        0.8378,
+        0.9794
+      ]
+    },
+    "verbose": {
+      "n": 50,
+      "correct": 49,
+      "accuracy": 0.98,
+      "ci95": [
+        0.895,
+        0.9965
+      ]
+    }
+  },
+  "same_route_all_3": {
+    "n": 50,
+    "correct": 46,
+    "accuracy": 0.92,
+    "ci95": [
+      0.8116,
+      0.9685
+    ]
+  },
+  "rows": [
+    {
+      "task": "code-01",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.971
+    },
+    {
+      "task": "code-01",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.969
+    },
+    {
+      "task": "code-01",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.761
+    },
+    {
+      "task": "code-02",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.955
+    },
+    {
+      "task": "code-02",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.946
+    },
+    {
+      "task": "code-02",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.961
+    },
+    {
+      "task": "code-03",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.987
+    },
+    {
+      "task": "code-03",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.938
+    },
+    {
+      "task": "code-03",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.942
+    },
+    {
+      "task": "code-04",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.978
+    },
+    {
+      "task": "code-04",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.881
+    },
+    {
+      "task": "code-04",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.949
+    },
+    {
+      "task": "code-05",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.972
+    },
+    {
+      "task": "code-05",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.918
+    },
+    {
+      "task": "code-05",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.957
+    },
+    {
+      "task": "code-06",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.982
+    },
+    {
+      "task": "code-06",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.901
+    },
+    {
+      "task": "code-06",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.923
+    },
+    {
+      "task": "code-07",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.933
+    },
+    {
+      "task": "code-07",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.933
+    },
+    {
+      "task": "code-07",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.929
+    },
+    {
+      "task": "code-08",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.974
+    },
+    {
+      "task": "code-08",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.945
+    },
+    {
+      "task": "code-08",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.942
+    },
+    {
+      "task": "code-09",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.981
+    },
+    {
+      "task": "code-09",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.962
+    },
+    {
+      "task": "code-09",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.508
+    },
+    {
+      "task": "code-10",
+      "intent": "coding",
+      "style": "direct",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.906
+    },
+    {
+      "task": "code-10",
+      "intent": "coding",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.914
+    },
+    {
+      "task": "code-10",
+      "intent": "coding",
+      "style": "verbose",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.544
+    },
+    {
+      "task": "reason-01",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.983
+    },
+    {
+      "task": "reason-01",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.976
+    },
+    {
+      "task": "reason-01",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.983
+    },
+    {
+      "task": "reason-02",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.906
+    },
+    {
+      "task": "reason-02",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.941
+    },
+    {
+      "task": "reason-02",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.938
+    },
+    {
+      "task": "reason-03",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.969
+    },
+    {
+      "task": "reason-03",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.952
+    },
+    {
+      "task": "reason-03",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.985
+    },
+    {
+      "task": "reason-04",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.982
+    },
+    {
+      "task": "reason-04",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.941
+    },
+    {
+      "task": "reason-04",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.983
+    },
+    {
+      "task": "reason-05",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.947
+    },
+    {
+      "task": "reason-05",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.925
+    },
+    {
+      "task": "reason-05",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.885
+    },
+    {
+      "task": "reason-06",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.974
+    },
+    {
+      "task": "reason-06",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.941
+    },
+    {
+      "task": "reason-06",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.967
+    },
+    {
+      "task": "reason-07",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.968
+    },
+    {
+      "task": "reason-07",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.922
+    },
+    {
+      "task": "reason-07",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.98
+    },
+    {
+      "task": "reason-08",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.976
+    },
+    {
+      "task": "reason-08",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.631
+    },
+    {
+      "task": "reason-08",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.956
+    },
+    {
+      "task": "reason-09",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.927
+    },
+    {
+      "task": "reason-09",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.969
+    },
+    {
+      "task": "reason-09",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.971
+    },
+    {
+      "task": "reason-10",
+      "intent": "reasoning",
+      "style": "direct",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.964
+    },
+    {
+      "task": "reason-10",
+      "intent": "reasoning",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.885
+    },
+    {
+      "task": "reason-10",
+      "intent": "reasoning",
+      "style": "verbose",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.795
+    },
+    {
+      "task": "search-01",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.983
+    },
+    {
+      "task": "search-01",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.907
+    },
+    {
+      "task": "search-01",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.809
+    },
+    {
+      "task": "search-02",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.935
+    },
+    {
+      "task": "search-02",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.799
+    },
+    {
+      "task": "search-02",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.656
+    },
+    {
+      "task": "search-03",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.814
+    },
+    {
+      "task": "search-03",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.734
+    },
+    {
+      "task": "search-03",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.374
+    },
+    {
+      "task": "search-04",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.963
+    },
+    {
+      "task": "search-04",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.903
+    },
+    {
+      "task": "search-04",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.859
+    },
+    {
+      "task": "search-05",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.977
+    },
+    {
+      "task": "search-05",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.853
+    },
+    {
+      "task": "search-05",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.829
+    },
+    {
+      "task": "search-06",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.984
+    },
+    {
+      "task": "search-06",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.865
+    },
+    {
+      "task": "search-06",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.855
+    },
+    {
+      "task": "search-07",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.86
+    },
+    {
+      "task": "search-07",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.512
+    },
+    {
+      "task": "search-07",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.836
+    },
+    {
+      "task": "search-08",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.955
+    },
+    {
+      "task": "search-08",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.953
+    },
+    {
+      "task": "search-08",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.835
+    },
+    {
+      "task": "search-09",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.845
+    },
+    {
+      "task": "search-09",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "coding",
+      "pred": "coding",
+      "confidence": 0.811
+    },
+    {
+      "task": "search-09",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.746
+    },
+    {
+      "task": "search-10",
+      "intent": "search",
+      "style": "direct",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.974
+    },
+    {
+      "task": "search-10",
+      "intent": "search",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.782
+    },
+    {
+      "task": "search-10",
+      "intent": "search",
+      "style": "verbose",
+      "pred_text_only": "search",
+      "pred": "search",
+      "confidence": 0.95
+    },
+    {
+      "task": "write-01",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.947
+    },
+    {
+      "task": "write-01",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.665
+    },
+    {
+      "task": "write-01",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.929
+    },
+    {
+      "task": "write-02",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.943
+    },
+    {
+      "task": "write-02",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "reasoning",
+      "confidence": 0.502
+    },
+    {
+      "task": "write-02",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.922
+    },
+    {
+      "task": "write-03",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.985
+    },
+    {
+      "task": "write-03",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.9
+    },
+    {
+      "task": "write-03",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.949
+    },
+    {
+      "task": "write-04",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.975
+    },
+    {
+      "task": "write-04",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.954
+    },
+    {
+      "task": "write-04",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.892
+    },
+    {
+      "task": "write-05",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.96
+    },
+    {
+      "task": "write-05",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.518
+    },
+    {
+      "task": "write-05",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.973
+    },
+    {
+      "task": "write-06",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.923
+    },
+    {
+      "task": "write-06",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.874
+    },
+    {
+      "task": "write-06",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.866
+    },
+    {
+      "task": "write-07",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.943
+    },
+    {
+      "task": "write-07",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.961
+    },
+    {
+      "task": "write-07",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.96
+    },
+    {
+      "task": "write-08",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.973
+    },
+    {
+      "task": "write-08",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.865
+    },
+    {
+      "task": "write-08",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.976
+    },
+    {
+      "task": "write-09",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.985
+    },
+    {
+      "task": "write-09",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.958
+    },
+    {
+      "task": "write-09",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.854
+    },
+    {
+      "task": "write-10",
+      "intent": "writing",
+      "style": "direct",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.977
+    },
+    {
+      "task": "write-10",
+      "intent": "writing",
+      "style": "casual",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.923
+    },
+    {
+      "task": "write-10",
+      "intent": "writing",
+      "style": "verbose",
+      "pred_text_only": "writing",
+      "pred": "writing",
+      "confidence": 0.982
+    },
+    {
+      "task": "mm-01",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.985
+    },
+    {
+      "task": "mm-01",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.937
+    },
+    {
+      "task": "mm-01",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.971
+    },
+    {
+      "task": "mm-02",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.994
+    },
+    {
+      "task": "mm-02",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.844
+    },
+    {
+      "task": "mm-02",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.783
+    },
+    {
+      "task": "mm-03",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.992
+    },
+    {
+      "task": "mm-03",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.921
+    },
+    {
+      "task": "mm-03",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.956
+    },
+    {
+      "task": "mm-04",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.977
+    },
+    {
+      "task": "mm-04",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "reasoning",
+      "pred": "multimodal",
+      "confidence": 0.724
+    },
+    {
+      "task": "mm-04",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.849
+    },
+    {
+      "task": "mm-05",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.983
+    },
+    {
+      "task": "mm-05",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.99
+    },
+    {
+      "task": "mm-05",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.961
+    },
+    {
+      "task": "mm-06",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.994
+    },
+    {
+      "task": "mm-06",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "multimodal",
+      "confidence": 0.78
+    },
+    {
+      "task": "mm-06",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.853
+    },
+    {
+      "task": "mm-07",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.745
+    },
+    {
+      "task": "mm-07",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "multimodal",
+      "confidence": 0.486
+    },
+    {
+      "task": "mm-07",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.879
+    },
+    {
+      "task": "mm-08",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.983
+    },
+    {
+      "task": "mm-08",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "multimodal",
+      "confidence": 0.825
+    },
+    {
+      "task": "mm-08",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.953
+    },
+    {
+      "task": "mm-09",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.943
+    },
+    {
+      "task": "mm-09",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "search",
+      "pred": "multimodal",
+      "confidence": 0.712
+    },
+    {
+      "task": "mm-09",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.95
+    },
+    {
+      "task": "mm-10",
+      "intent": "multimodal",
+      "style": "direct",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.993
+    },
+    {
+      "task": "mm-10",
+      "intent": "multimodal",
+      "style": "casual",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.748
+    },
+    {
+      "task": "mm-10",
+      "intent": "multimodal",
+      "style": "verbose",
+      "pred_text_only": "multimodal",
+      "pred": "multimodal",
+      "confidence": 0.909
+    }
+  ]
+}

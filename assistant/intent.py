@@ -40,9 +40,30 @@ def build_pipeline() -> Pipeline:
     return Pipeline([("features", features), ("clf", clf)])
 
 
-def train(csv_path=None, test_size: float = 0.2, seed: int = 42) -> dict:
+PUBLIC_BENCH = config.DATA_DIR / "eval" / "public_bench.json"
+
+
+def public_calibration_prompts(path=PUBLIC_BENCH) -> pd.DataFrame:
+    """Prompts from the public benchmark's CALIBRATION split, labelled with their task type.
+
+    Adding them teaches the classifier what real, third-party prompts look like (IFEval writing
+    prompts full of counts and keywords, MBPP with assert lines).  The TEST split is never read here,
+    so the public test accuracy stays an unseen-data measurement.
+    """
+    if not path.exists():
+        return pd.DataFrame(columns=["text", "intent", "group", "split"])
+    tasks = json.loads(path.read_text())["tasks"]
+    rows = [{"text": t["prompt"], "intent": t["intent"], "group": f"public-{t['id']}", "split": "train"}
+            for t in tasks if t["split"] == "calibration"]
+    return pd.DataFrame(rows)
+
+
+def train(csv_path=None, test_size: float = 0.2, seed: int = 42, public: bool = True) -> dict:
     csv_path = csv_path or config.DATA_DIR / "intents.csv"
     df = pd.read_csv(csv_path)
+    n_team = len(df)
+    if public:
+        df = pd.concat([df, public_calibration_prompts()], ignore_index=True)
     df = df.drop_duplicates(subset="text").reset_index(drop=True)
     if "split" in df.columns:
         # group-aware split written by scripts/make_intent_dataset.py:
@@ -59,6 +80,8 @@ def train(csv_path=None, test_size: float = 0.2, seed: int = 42) -> dict:
     report = classification_report(y_te, pred, output_dict=True, zero_division=0)
     metrics = {
         "n_total": int(len(df)),
+        "n_team_prompts": int(n_team),
+        "n_public_calibration_prompts": int(len(df) - n_team) if public else 0,
         "n_train": int(len(X_tr)),
         "n_test": int(len(X_te)),
         "accuracy": float(accuracy_score(y_te, pred)),

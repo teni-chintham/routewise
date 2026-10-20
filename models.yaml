@@ -1,0 +1,111 @@
+# Model registry.  Add any model you can reach, then run:
+#     python -m assistant calibrate --model <name>
+# which measures its accuracy per task type, its latency on your machine and its cost per query,
+# and writes a scorecard the router uses.  Nothing here is a guess: the router only uses
+# measured scorecards.
+#
+# Fields
+#   name         unique name used everywhere else
+#   provider     ollama | openai | anthropic | gemini
+#                "openai" means ANY OpenAI-compatible endpoint: OpenAI, Groq, OpenRouter,
+#                Together, LM Studio, vLLM, llama.cpp server ... set base_url for those.
+#   model        the provider's model id
+#   base_url     optional, openai-compatible endpoints only
+#   api_key_env  environment variable (read from .env) holding the key; omit for local models
+#   local        true if the model runs on this computer (prompts never leave the device)
+#   vision       true if it accepts an image
+#   price_in     USD per 1M input tokens  (0 for local models)
+#   price_out    USD per 1M output tokens (0 for local models; thinking tokens are billed as output)
+#   rpm          optional requests-per-minute cap (free tiers)
+#   enabled      false keeps the entry but skips it
+
+models:
+  - name: qwen2.5-coder-3b
+    provider: ollama
+    model: qwen2.5-coder:3b
+    local: true
+    vision: false
+    price_in: 0
+    price_out: 0
+
+  - name: llama3.2-3b
+    provider: ollama
+    model: llama3.2:3b
+    local: true
+    vision: false
+    price_in: 0
+    price_out: 0
+
+  - name: llama3.2-1b
+    provider: ollama
+    model: llama3.2:1b
+    local: true
+    vision: false
+    price_in: 0
+    price_out: 0
+
+  - name: moondream-1.8b
+    provider: ollama
+    model: moondream
+    local: true
+    vision: true
+    price_in: 0
+    price_out: 0
+
+  - name: gemini-3.1-flash-lite
+    provider: gemini
+    model: gemini-3.1-flash-lite
+    api_key_env: GEMINI_API_KEY
+    local: false
+    vision: true
+    price_in: 0.25     # Google AI list price, paid tier, Oct 2026 (used for the cost comparison)
+    price_out: 1.50
+    rpm: 12
+    free_tier: true    # API key from a Google AI Studio project with NO billing: calls cost nothing
+
+  - name: claude-haiku-5.5
+    provider: anthropic
+    model: claude-haiku-5-5
+    options:
+      no_temperature: true   # these models reject the temperature parameter
+      min_output_tokens: 4096  # they think before answering; 200-700 tokens cut answers off
+    api_key_env: ANTHROPIC_API_KEY
+    local: false
+    vision: true
+    price_in: 0.10     # prompts under 100k tokens, Oct 2026
+    price_out: 0.50
+
+  - name: claude-sonnet-5.5
+    provider: anthropic
+    model: claude-sonnet-5-5
+    options:
+      no_temperature: true   # these models reject the temperature parameter
+      min_output_tokens: 4096  # they think before answering; 200-700 tokens cut answers off
+    api_key_env: ANTHROPIC_API_KEY
+    local: false
+    vision: true
+    price_in: 2.00
+    price_out: 10.00
+
+  - name: gpt-5-mini
+    provider: openai
+    model: gpt-5-mini
+    api_key_env: OPENAI_API_KEY
+    local: false
+    vision: true
+    price_in: 0.25
+    price_out: 2.00    # reasoning tokens are billed as output
+    options:
+      no_temperature: true
+      reasoning_effort: minimal
+
+  # ---- example: any OpenAI-compatible endpoint ---------------------------------------
+  # - name: groq-llama-3.3-70b
+  #   provider: openai
+  #   base_url: https://api.groq.com/openai/v1
+  #   model: llama-3.3-70b-versatile
+  #   api_key_env: GROQ_API_KEY
+  #   local: false
+  #   vision: false
+  #   price_in: 0.59
+  #   price_out: 0.79

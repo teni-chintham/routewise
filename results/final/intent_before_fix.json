@@ -1,0 +1,118 @@
+{
+ "note": "Intent classifier before it was also trained on the public CALIBRATION prompts (team-written prompts only). Same 200 public test prompts.",
+ "intent": {
+  "pipeline_accuracy": {
+   "n": 200,
+   "correct": 166,
+   "accuracy": 0.83,
+   "ci95": [
+    0.7718,
+    0.8757
+   ]
+  },
+  "text_only_accuracy_on_text_tasks": {
+   "n": 160,
+   "correct": 126,
+   "accuracy": 0.7875,
+   "ci95": [
+    0.7178,
+    0.8438
+   ]
+  },
+  "by_intent": {
+   "coding": {
+    "n": 40,
+    "correct": 37,
+    "accuracy": 0.925,
+    "ci95": [
+     0.8014,
+     0.9742
+    ]
+   },
+   "writing": {
+    "n": 40,
+    "correct": 18,
+    "accuracy": 0.45,
+    "ci95": [
+     0.3071,
+     0.6017
+    ]
+   },
+   "search": {
+    "n": 40,
+    "correct": 33,
+    "accuracy": 0.825,
+    "ci95": [
+     0.6805,
+     0.9125
+    ]
+   },
+   "reasoning": {
+    "n": 40,
+    "correct": 38,
+    "accuracy": 0.95,
+    "ci95": [
+     0.835,
+     0.9862
+    ]
+   },
+   "multimodal": {
+    "n": 40,
+    "correct": 40,
+    "accuracy": 1.0,
+    "ci95": [
+     0.9124,
+     1.0
+    ]
+   }
+  }
+ },
+ "misrouted": 34,
+ "grouped_holdout_accuracy": 0.8444444444444444,
+ "policies": {
+  "routed: balanced": {
+   "correct": 179,
+   "n": 200,
+   "accuracy": 0.895,
+   "ci95": [
+    0.8448,
+    0.9303
+   ],
+   "cost_per_1k_usd": 0.1448,
+   "share_local": 0.0
+  },
+  "routed: quality-first": {
+   "correct": 179,
+   "n": 200,
+   "accuracy": 0.895,
+   "ci95": [
+    0.8448,
+    0.9303
+   ],
+   "cost_per_1k_usd": 1.6312,
+   "share_local": 0.0
+  },
+  "routed: cost-saver": {
+   "correct": 179,
+   "n": 200,
+   "accuracy": 0.895,
+   "ci95": [
+    0.8448,
+    0.9303
+   ],
+   "cost_per_1k_usd": 0.1448,
+   "share_local": 0.0
+  },
+  "routed: local-first cascade": {
+   "correct": 176,
+   "n": 200,
+   "accuracy": 0.88,
+   "ci95": [
+    0.8277,
+    0.918
+   ],
+   "cost_per_1k_usd": 0.1242,
+   "share_local": 0.265
+  }
+ }
+}

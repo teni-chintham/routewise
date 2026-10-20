@@ -29,7 +29,7 @@ python scripts/train_intent.py
 python scripts/build_index.py
 
 echo "== offline tests"
-ASSISTANT_PROVIDER=mock ASSISTANT_EMBEDDER=tfidf python -m pytest -q tests
+ASSISTANT_FORCE_PROVIDER=mock ASSISTANT_EMBEDDER=tfidf python -m pytest -q tests
 
 echo
 echo "done.  next:"

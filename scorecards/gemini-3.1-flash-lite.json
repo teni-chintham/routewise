@@ -1,0 +1,101 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "spec": {
+    "name": "gemini-3.1-flash-lite",
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "local": false,
+    "vision": true,
+    "price_in": 0.25,
+    "price_out": 1.5,
+    "api_key_env": "GEMINI_API_KEY",
+    "rpm": 12,
+    "enabled": true,
+    "free_tier": true
+  },
+  "benchmark": "public_bench calibration split",
+  "created": "2026-10-20T10:10:45+0000",
+  "machine": "Linux x86_64 vm",
+  "intents": {
+    "coding": {
+      "eligible": true,
+      "n": 40,
+      "correct": 35,
+      "accuracy": 0.875,
+      "ci95": [
+        0.7389,
+        0.9454
+      ],
+      "median_latency_s": 1.305,
+      "p90_latency_s": 4.054,
+      "mean_cost_usd": 0.00012344,
+      "mean_tokens_in": 107.0,
+      "mean_tokens_out": 64.5,
+      "errors": 0
+    },
+    "writing": {
+      "eligible": true,
+      "n": 40,
+      "correct": 38,
+      "accuracy": 0.95,
+      "ci95": [
+        0.835,
+        0.9862
+      ],
+      "median_latency_s": 3.362,
+      "p90_latency_s": 7.37,
+      "mean_cost_usd": 0.00024199,
+      "mean_tokens_in": 87.9,
+      "mean_tokens_out": 146.7,
+      "errors": 0
+    },
+    "search": {
+      "eligible": true,
+      "n": 40,
+      "correct": 21,
+      "accuracy": 0.525,
+      "ci95": [
+        0.375,
+        0.6706
+      ],
+      "median_latency_s": 2.442,
+      "p90_latency_s": 18.386,
+      "mean_cost_usd": 4.073e-05,
+      "mean_tokens_in": 53.9,
+      "mean_tokens_out": 18.2,
+      "errors": 0
+    },
+    "reasoning": {
+      "eligible": true,
+      "n": 40,
+      "correct": 39,
+      "accuracy": 0.975,
+      "ci95": [
+        0.8712,
+        0.9956
+      ],
+      "median_latency_s": 1.258,
+      "p90_latency_s": 2.105,
+      "mean_cost_usd": 0.00017171,
+      "mean_tokens_in": 119.4,
+      "mean_tokens_out": 94.6,
+      "errors": 0
+    },
+    "multimodal": {
+      "eligible": true,
+      "n": 40,
+      "correct": 40,
+      "accuracy": 1.0,
+      "ci95": [
+        0.9124,
+        1.0
+      ],
+      "median_latency_s": 2.67,
+      "p90_latency_s": 5.238,
+      "mean_cost_usd": 0.00028641,
+      "mean_tokens_in": 1139.2,
+      "mean_tokens_out": 1.1,
+      "errors": 0
+    }
+  }
+}

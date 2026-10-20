@@ -1,0 +1,126 @@
+@startuml class_diagram_routing
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam classAttributeIconSize 0
+skinparam ArrowColor #333333
+skinparam classBorderColor #1F4E79
+skinparam classBackgroundColor #FFFFFF
+skinparam classHeaderBackgroundColor #EEF4FC
+skinparam stereotypeCBackgroundColor #EEF4FC
+skinparam packageBorderColor #8A8984
+skinparam sequenceParticipantBorderColor #1F4E79
+skinparam sequenceParticipantBackgroundColor #EEF4FC
+skinparam sequenceLifeLineBorderColor #8A8984
+skinparam sequenceGroupBorderColor #1F4E79
+skinparam sequenceGroupHeaderFontColor #1F4E79
+skinparam activityBorderColor #1F4E79
+skinparam activityBackgroundColor #EEF4FC
+skinparam activityDiamondBorderColor #1F4E79
+skinparam activityDiamondBackgroundColor #FFFFFF
+skinparam swimlaneBorderColor #8A8984
+skinparam noteBackgroundColor #FFFBEA
+skinparam noteBorderColor #B8A86A
+
+set separator none
+hide circle
+hide empty members
+skinparam packageStyle rectangle
+skinparam nodesep 30
+skinparam ranksep 45
+skinparam linetype polyline
+left to right direction
+package "router.py" {
+  class RouteDecision {
+    +intent: str
+    +chosen: str | None
+    +scores: dict[str, float]
+    +breakdown: dict[str, dict[str, float]]
+    +inputs: dict[str, dict[str, float]]
+    +excluded: dict[str, str]
+    +weights: dict[str, float]
+  }
+  class "router" as M_router <<module>> {
+    {static} +normalise(weights: dict | None): dict[str, float]
+    {static} +rus(stats: dict, weights: dict, c_max: float, l_max: float): tuple[float, dict, dict]
+    {static} +route(intent: str, weights, *, cards, specs, image, private, policy, c_max, l_max, pool): RouteDecision
+  }
+}
+package "cascade.py" {
+  class CascadeStep {
+    +kept_local: bool
+    +model: str | None
+    +reason: str
+  }
+  class "cascade" as M_cascade <<module>> {
+    {static} +prompt_asserts(prompt: str): list[str]
+    {static} +final_number(text: str): float | None
+    {static} +check_code(prompt: str, answer: str): CascadeStep
+    {static} +check_agreement(answers: dict[str, str]): CascadeStep
+  }
+}
+package "registry.py" {
+  class ModelSpec {
+    +name: str
+    +provider: str
+    +model: str
+    +local: bool
+    +vision: bool
+    +price_in: float
+    +price_out: float
+    +base_url: str | None
+    +api_key_env: str | None
+    +rpm: int | None
+    +enabled: bool
+    +free_tier: bool
+    +options: dict
+    +cost_usd(tokens_in: int, tokens_out: int): float
+    +to_dict(): dict
+  }
+  class "registry" as M_registry <<module>> {
+    {static} +load(path: Path | None, include_disabled: bool): dict[str, ModelSpec]
+    {static} +add(spec: ModelSpec, path: Path | None): None
+  }
+}
+package "scorecard.py" {
+  class "scorecard" as M_scorecard <<module>> {
+    {static} +wilson(correct: int, n: int, z: float): tuple[float, float]
+    {static} +summarise(rows: list[dict]): dict
+    {static} +build(spec, rows_by_intent: dict[str, list[dict]], benchmark: str): dict
+    {static} +save(card: dict, directory: Path | None): Path
+    {static} +load_all(directory: Path | None): dict[str, dict]
+  }
+}
+package "providers.py" {
+  class ProviderError <<exception>> {
+  }
+  class GenResult {
+    +text: str
+    +seconds: float
+    +tokens_in: int
+    +tokens_out: int
+    +cost_usd: float
+    +error: str | None
+  }
+  class QuotaExhausted <<exception>> {
+  }
+  class "providers" as M_providers <<module>> {
+    {static} +generate(spec: ModelSpec, system: str, messages: list[dict], image: str | None, *, private, max_tokens, raise_errors): GenResult
+    {static} +embed(texts: list[str], embedder: str | None): np.ndarray
+    {static} +ollama_available(): bool
+    {static} +ollama_models(): set[str]
+    {static} +gemini_models(spec: ModelSpec): list[str]
+  }
+}
+class "bench.graders" as M_bench_graders <<module>>
+M_cascade ..> CascadeStep : <<create>>
+M_cascade ..> M_bench_graders : grade()\n(runs the code check)
+M_router ..> RouteDecision : <<create>>
+M_router ..> M_scorecard : load_all()
+M_router ..> M_registry : load()
+M_router ..> ModelSpec : eligibility
+M_registry ..> ModelSpec : <<create>>\nfrom models.yaml
+M_providers ..> GenResult : <<create>>
+M_providers ..> ModelSpec : reads
+QuotaExhausted --|> ProviderError
+@enduml

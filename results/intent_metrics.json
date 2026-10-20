@@ -1,9 +1,11 @@
 {
-  "n_total": 1350,
-  "n_train": 1080,
+  "n_total": 1515,
+  "n_team_prompts": 1350,
+  "n_public_calibration_prompts": 165,
+  "n_train": 1245,
   "n_test": 270,
-  "accuracy": 0.8444444444444444,
-  "macro_f1": 0.8440460122230393,
+  "accuracy": 0.9,
+  "macro_f1": 0.8986096452989493,
   "per_class": {
     "coding": {
       "precision": 1.0,
@@ -12,27 +14,27 @@
       "support": 54.0
     },
     "multimodal": {
-      "precision": 0.8852459016393442,
+      "precision": 1.0,
       "recall": 1.0,
-      "f1-score": 0.9391304347826087,
+      "f1-score": 1.0,
       "support": 54.0
     },
     "reasoning": {
-      "precision": 0.6956521739130435,
+      "precision": 0.8,
       "recall": 0.8888888888888888,
-      "f1-score": 0.7804878048780488,
+      "f1-score": 0.8421052631578947,
       "support": 54.0
     },
     "search": {
-      "precision": 0.8125,
-      "recall": 0.7222222222222222,
-      "f1-score": 0.7647058823529411,
+      "precision": 0.8421052631578947,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8648648648648649,
       "support": 54.0
     },
     "writing": {
-      "precision": 0.9056603773584906,
-      "recall": 0.8888888888888888,
-      "f1-score": 0.897196261682243,
+      "precision": 0.9,
+      "recall": 1.0,
+      "f1-score": 0.9473684210526315,
       "support": 54.0
     }
   },
@@ -46,23 +48,23 @@
   "confusion_matrix": [
     [
       39,
-      5,
+      6,
       3,
       6,
-      1
+      0
     ],
     [
+      0,
+      54,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
       0,
       48,
-      0,
-      0,
-      6
-    ],
-    [
-      0,
-      0,
-      39,
-      15,
+      6,
       0
     ],
     [
@@ -80,5 +82,5 @@
       54
     ]
   ],
-  "random_split_accuracy_leaky": 1.0
+  "random_split_accuracy_leaky": 0.976897689768977
 }

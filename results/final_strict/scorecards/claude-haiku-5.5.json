@@ -1,0 +1,104 @@
+{
+  "model": "claude-haiku-5.5",
+  "spec": {
+    "name": "claude-haiku-5.5",
+    "provider": "anthropic",
+    "model": "claude-haiku-5-5",
+    "local": false,
+    "vision": true,
+    "price_in": 0.1,
+    "price_out": 0.5,
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "enabled": true,
+    "free_tier": false,
+    "options": {
+      "no_temperature": true,
+      "min_output_tokens": 4096
+    }
+  },
+  "benchmark": "public_bench calibration split",
+  "created": "2026-10-20T10:12:12+0000",
+  "machine": "Linux x86_64 vm",
+  "intents": {
+    "coding": {
+      "eligible": true,
+      "n": 40,
+      "correct": 39,
+      "accuracy": 0.975,
+      "ci95": [
+        0.8712,
+        0.9956
+      ],
+      "median_latency_s": 2.229,
+      "p90_latency_s": 5.276,
+      "mean_cost_usd": 0.00013241,
+      "mean_tokens_in": 147.8,
+      "mean_tokens_out": 235.3,
+      "errors": 0
+    },
+    "writing": {
+      "eligible": true,
+      "n": 40,
+      "correct": 34,
+      "accuracy": 0.85,
+      "ci95": [
+        0.7093,
+        0.9294
+      ],
+      "median_latency_s": 5.201,
+      "p90_latency_s": 10.686,
+      "mean_cost_usd": 0.00047408,
+      "mean_tokens_in": 134.9,
+      "mean_tokens_out": 921.2,
+      "errors": 0
+    },
+    "search": {
+      "eligible": true,
+      "n": 40,
+      "correct": 15,
+      "accuracy": 0.375,
+      "ci95": [
+        0.2422,
+        0.5297
+      ],
+      "median_latency_s": 1.643,
+      "p90_latency_s": 3.285,
+      "mean_cost_usd": 9.594e-05,
+      "mean_tokens_in": 87.8,
+      "mean_tokens_out": 174.3,
+      "errors": 0
+    },
+    "reasoning": {
+      "eligible": true,
+      "n": 40,
+      "correct": 39,
+      "accuracy": 0.975,
+      "ci95": [
+        0.8712,
+        0.9956
+      ],
+      "median_latency_s": 1.603,
+      "p90_latency_s": 2.509,
+      "mean_cost_usd": 0.00013836,
+      "mean_tokens_in": 176.6,
+      "mean_tokens_out": 241.4,
+      "errors": 0
+    },
+    "multimodal": {
+      "eligible": true,
+      "n": 40,
+      "correct": 40,
+      "accuracy": 1.0,
+      "ci95": [
+        0.9124,
+        1.0
+      ],
+      "median_latency_s": 0.98,
+      "p90_latency_s": 1.217,
+      "mean_cost_usd": 3.792e-05,
+      "mean_tokens_in": 338.5,
+      "mean_tokens_out": 8.2,
+      "errors": 0
+    }
+  }
+}

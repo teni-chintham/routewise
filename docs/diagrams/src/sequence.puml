@@ -1,0 +1,91 @@
+@startuml sequence
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 12
+skinparam classAttributeIconSize 0
+skinparam ArrowColor #333333
+skinparam classBorderColor #1F4E79
+skinparam classBackgroundColor #FFFFFF
+skinparam classHeaderBackgroundColor #EEF4FC
+skinparam stereotypeCBackgroundColor #EEF4FC
+skinparam packageBorderColor #8A8984
+skinparam sequenceParticipantBorderColor #1F4E79
+skinparam sequenceParticipantBackgroundColor #EEF4FC
+skinparam sequenceLifeLineBorderColor #8A8984
+skinparam sequenceGroupBorderColor #1F4E79
+skinparam sequenceGroupHeaderFontColor #1F4E79
+skinparam activityBorderColor #1F4E79
+skinparam activityBackgroundColor #EEF4FC
+skinparam activityDiamondBorderColor #1F4E79
+skinparam activityDiamondBackgroundColor #FFFFFF
+skinparam swimlaneBorderColor #8A8984
+skinparam noteBackgroundColor #FFFBEA
+skinparam noteBorderColor #B8A86A
+
+autonumber
+hide footbox
+actor User
+boundary "app.py\n(Streamlit)" as UI
+participant ":Assistant" as A
+participant ":Memory" as M
+participant ":Retriever" as R
+participant ":IntentClassifier" as I
+participant "router" as RT
+participant "cascade" as C
+participant "providers" as P
+participant "Model backend\n(Ollama / cloud API)" as B
+
+User -> UI : type question (+ image)
+UI -> A : chat(query, image)
+activate A
+opt memory on (builds B, D)
+  A -> M : recall(query)
+  M --> A : hits: list[MemoryHit]
+end
+opt RAG on (builds C, D)
+  A -> R : retrieve(query)
+  R --> A : passages: list[Passage]
+end
+opt memory on
+  A -> M : recent_turns(session_id)
+  M --> A : history (earlier turns)
+end
+note over A : private = hits or passages or history
+opt routing on (builds A, D)
+  A -> I : predict(query)
+  I --> A : IntentResult
+  A -> RT : route(intent, weights, image, private)
+  note right of RT : RUS for every eligible model.\nPrivate context: local models only.
+  RT --> A : RouteDecision (chosen model)
+end
+opt local first on, intent is coding or reasoning, no image\n(coding: only if the prompt has an assert)
+  A -> P : generate(local model(s), prompt)
+  P -> B : prompt
+  B --> P : reply
+  P --> A : GenResult
+  A -> C : check_code(query, answer) / check_agreement(answers)
+  C --> A : CascadeStep(kept_local)
+end
+opt answer not kept local (or local first off)
+  A -> P : generate(chosen or fixed model, system prompt, messages, image)
+  activate P
+  opt chosen model is a cloud model
+    P -> P : spend cap, rate limit,\nappend to egress log (size + hash)
+  end
+  P -> B : prompt
+  B --> P : reply + token counts
+  P --> A : GenResult (text, seconds, tokens, cost)
+  deactivate P
+end
+opt passages used but no [n] marker
+  A -> A : attach_sources(answer, passages)
+end
+opt memory on
+  A -> M : add_turn(user), add_turn(assistant)
+  note right of M : extract_facts() on the user turn;\nsession summary every N turns
+end
+A -> A : append to cost ledger
+A --> UI : Response(answer, model, decision, cost, left_device)
+deactivate A
+UI --> User : answer + Inspector
+@enduml

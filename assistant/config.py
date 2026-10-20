@@ -1,7 +1,13 @@
-"""Central configuration: model pool, scoring weights, provider and paths.
+"""Central configuration.  Everything that shapes a routing decision is here or in models.yaml.
 
-Everything the router uses to make a decision lives here in plain sight,
-so a routing decision can be audited and reproduced by anyone.
+Where data lives
+    Personal data (memory, document index, scorecards measured on this machine, the cost ledger
+    and the egress audit log) lives in ASSISTANT_HOME, default ~/.context-assistant.  It never
+    leaves the computer except as part of a prompt sent to a cloud model the user enabled, and
+    every such request is recorded in egress.jsonl.
+
+    Research artefacts (benchmarks, results, the reference scorecards from the published run)
+    live in the repository.
 """
 from __future__ import annotations
 
@@ -9,79 +15,82 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+try:  # settings and API keys from .env (never committed)
+    from dotenv import load_dotenv
+    load_dotenv(ROOT / ".env")
+except Exception:  # pragma: no cover
+    pass
 DATA_DIR = ROOT / "data"
 MODELS_DIR = ROOT / "models"
 RESULTS_DIR = ROOT / "results"
+REGISTRY_PATH = Path(os.getenv("ASSISTANT_REGISTRY", ROOT / "models.yaml"))
+REFERENCE_SCORECARDS = ROOT / "scorecards"  # measured on the reference machine, shipped with the repo
+
+HOME = Path(os.getenv("ASSISTANT_HOME", Path.home() / ".context-assistant")).expanduser()
+SCORECARD_DIR = Path(os.getenv("ASSISTANT_SCORECARDS", HOME / "scorecards"))
+EGRESS_LOG = HOME / "egress.jsonl"
+SPEND_FILE = HOME / "spend_usd.txt"  # running total of real spend on paid (non-free-tier) cloud models
+SPEND_CAP_USD = float(os.environ["ASSISTANT_SPEND_CAP"]) if os.getenv("ASSISTANT_SPEND_CAP") else None
+LEDGER = HOME / "ledger.jsonl"
+
 for _d in (MODELS_DIR, RESULTS_DIR):
     _d.mkdir(exist_ok=True)
 
 INTENTS = ["coding", "writing", "search", "reasoning", "multimodal"]
 
 # ---------------------------------------------------------------------------
-# Provider
-#   ollama  local models via http://localhost:11434 (default, free, offline)
-#   openai / anthropic / gemini  cloud APIs, keys read from .env
-#   mock    deterministic fake model, used by the test-suite and smoke runs
+# Providers.  "mock" is a deterministic fake model used by the offline test-suite.
 # ---------------------------------------------------------------------------
-PROVIDER = os.getenv("ASSISTANT_PROVIDER", "ollama")
+PROVIDER_OVERRIDE = os.getenv("ASSISTANT_FORCE_PROVIDER") or None  # "mock" only: every model becomes the offline mock
+if PROVIDER_OVERRIDE not in (None, "mock"):
+    raise ValueError("ASSISTANT_FORCE_PROVIDER can only be 'mock' (models choose their own provider in models.yaml)")
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-EMBEDDER = os.getenv("ASSISTANT_EMBEDDER", "ollama")  # ollama | tfidf
+EMBEDDER = os.getenv("ASSISTANT_EMBEDDER", "ollama")  # ollama | tfidf  (both local)
 OLLAMA_EMBED_MODEL = os.getenv("OLLAMA_EMBED_MODEL", "nomic-embed-text")
+USD_TO_INR = float(os.getenv("USD_TO_INR", "88.0"))
 
 # ---------------------------------------------------------------------------
-# Model pool.
-# Each entry: which backend model plays this "specialist", and its per-intent
-# accuracy estimate (0-1), relative cost (0-1, higher = more expensive) and
-# relative latency (0-1, higher = slower).  Accuracy figures are the team's
-# published priors; they can be replaced by measured values from results/.
+# Routing Utility Score (RUS), see docs/SCORING.md
+#
+#   RUS(m, i) = w_a * A(m, i)
+#             + w_c * (1 - min(C(m, i) / C_max, 1))
+#             + w_l * (1 - min(L(m, i) / L_max, 1))
+#
+#   A  lower bound of the 95% Wilson interval of measured accuracy on intent i
+#   C  mean measured cost per query in USD (0 for local models)
+#   L  median measured latency in seconds on this machine
 # ---------------------------------------------------------------------------
-MODEL_POOL = {
-    "GPT": {
-        "ollama": "qwen2.5-coder:3b",
-        "openai": "gpt-4o",
-        "accuracy": {"coding": 0.95, "writing": 0.85, "search": 0.70, "reasoning": 0.90, "multimodal": 0.80},
-        "cost": 0.60,
-        "latency": 0.50,
-    },
-    "Claude": {
-        "ollama": "llama3.2:3b",
-        "anthropic": "claude-sonnet-4-5",
-        "accuracy": {"coding": 0.90, "writing": 0.96, "search": 0.72, "reasoning": 0.94, "multimodal": 0.78},
-        "cost": 0.65,
-        "latency": 0.55,
-    },
-    "Gemini": {
-        "ollama": "moondream",
-        "gemini": "gemini-2.0-flash",
-        "accuracy": {"coding": 0.80, "writing": 0.80, "search": 0.78, "reasoning": 0.82, "multimodal": 0.96},
-        "cost": 0.45,
-        "latency": 0.45,
-    },
-    "Sonar": {
-        "ollama": "llama3.2:1b",
-        "openai": "gpt-4o-mini",  # stand-in when using cloud APIs
-        "accuracy": {"coding": 0.55, "writing": 0.60, "search": 0.95, "reasoning": 0.60, "multimodal": 0.50},
-        "cost": 0.20,
-        "latency": 0.20,
-    },
-}
-
-# Scoring weights: score = w_a*acc + w_c*(1-cost) + w_l*(1-latency)
 DEFAULT_WEIGHTS = {"accuracy": 0.6, "cost": 0.2, "latency": 0.2}
+COST_BUDGET_USD = float(os.getenv("ASSISTANT_COST_BUDGET", "0.002"))   # C_max: most you would pay for one query
+LATENCY_BUDGET_S = float(os.getenv("ASSISTANT_LATENCY_BUDGET", "30"))  # L_max: longest you would wait
+CONFIDENCE_Z = 1.96  # 95% Wilson interval
+
+# Privacy: when the prompt carries personal memory or private document passages, only local
+# models are eligible ("local").  "allow" lets cloud models see it (still logged in egress.jsonl).
+PRIVATE_CONTEXT_POLICY = os.getenv("ASSISTANT_PRIVATE_CONTEXT", "local")
+
+# The model a non-routing variant always uses (ablation baseline, B and C)
+FIXED_MODEL = os.getenv("ASSISTANT_FIXED_MODEL", "llama3.2-3b")
 
 # ---------------------------------------------------------------------------
 # Memory (Model B)
 # ---------------------------------------------------------------------------
-MEMORY_DB = os.getenv("ASSISTANT_MEMORY_DB", str(ROOT / "memory.db"))
+MEMORY_DB = os.getenv("ASSISTANT_MEMORY_DB", str(HOME / "memory.db"))
 MEMORY_TOP_K = 5
 SESSION_SUMMARY_EVERY = 6  # turns
 
 # ---------------------------------------------------------------------------
 # RAG (Model C)
 # ---------------------------------------------------------------------------
-CORPUS_DIR = DATA_DIR / "corpus"
-INDEX_PATH = MODELS_DIR / "rag_index.pkl"
+CORPUS_DIR = Path(os.getenv("ASSISTANT_CORPUS", DATA_DIR / "corpus"))
+INDEX_PATH = Path(os.getenv("ASSISTANT_INDEX", MODELS_DIR / "rag_index.pkl"))
 CHUNK_WORDS = 120
 CHUNK_OVERLAP = 30
 RAG_TOP_K = 4
 RAG_MIN_SIM = 0.15
+
+
+def ensure_home() -> Path:
+    HOME.mkdir(parents=True, exist_ok=True)
+    SCORECARD_DIR.mkdir(parents=True, exist_ok=True)
+    return HOME
